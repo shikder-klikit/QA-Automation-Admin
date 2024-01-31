@@ -6,13 +6,27 @@ before(function(){
 })
 
 Cypress.Commands.add('visitsite',() =>{
-    cy.visit(testData.data.siteURL)
+    cy.visit(testData.data.sideloading.siteURL)
     })
 
-Cypress.Commands.add('login', () =>{
+Cypress.Commands.add('login_as_automationAdmin', () =>{
     cy.wait(1000)
-    cy.get('#username').type(testData.data.user_email)
-    cy.get('#password').type(testData.data.user_password)
+    cy.get('#username').type(testData.data.Admin.automation_admin.user_email)
+    cy.get('#password').type(testData.data.Admin.automation_admin.user_password)
+    cy.wait(1000)
+    cy.get('form > .w-full').click()
+})
+Cypress.Commands.add('login_as_shikder', () =>{
+    cy.wait(1000)
+    cy.get('#username').type(testData.data.Admin.shikder.user_email)
+    cy.get('#password').type(testData.data.Admin.shikder.user_password)
+    cy.wait(1000)
+    cy.get('form > .w-full').click()
+})
+Cypress.Commands.add('login_as_sabbir', () =>{
+    cy.wait(1000)
+    cy.get('#username').type(testData.data.Admin.sabbir.user_email)
+    cy.get('#password').type(testData.data.Admin.sabbir.user_password)
     cy.wait(1000)
     cy.get('form > .w-full').click()
 })
