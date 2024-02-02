@@ -4,19 +4,15 @@ const closingHour = "";
 const openingHour = "";
 const selectHour = "";
 const selectMinute = "";
-
-
 const startDate="";
 const startTime="";
 const endDate="";
 const endTime = "";
-
 const availabilityStartTime="";
 const availabilityEndTime ="";
 
 class Campaign
 {
-
     clickedOnSave(){
         cy.xpath(save).click({force:true})
     }
@@ -27,7 +23,6 @@ class Campaign
         cy.get(selectHour).eq(randomHour).click();
         const randomMinute = Cypress._.random(0, 5) * 5;
         cy.get(selectMinute).eq(randomMinute / 5).click();
-
     }
 
     clickedOnClosingHourAndSelectedRandomValue(){
@@ -36,16 +31,11 @@ class Campaign
         cy.get(selectHour).eq(randomHour).click();
         const randomMinute = Cypress._.random(0, 5) * 5;
         cy.get(selectMinute).eq(randomMinute / 5).click();
-
     }
 
     clickOnNext() {
         cy.get(next).click()
     }
 
-
-
-
 }
-
 export default Campaign

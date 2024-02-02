@@ -11,25 +11,20 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterBrand();
         cy.enterBranchData();
         cy.clickCloseButton;
-        cy.clickNextButton();
-        cy.clickNextButton();
+        const campaign = new CampaignMethods();
+        campaign.clickOnNext()
+        campaign.clickOnNext()
         cy.enterValue();
         cy.enterValueUpto();
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
         cy.enterMinCartValue();
 
-        cy.window().then((win) => {
-            const newDate = new Date(win.Date());
-            // do something usefull with the date
-            console.log('#############'+ newDate);
-        });
-
-        const campaign = new CampaignMethods();
-
-
-
-
+        // cy.window().then((win) => {
+        //     const newDate = new Date(win.Date());
+        //     // do something usefull with the date
+        //     console.log('#############'+ newDate);
+        //});
 
     })
 })
