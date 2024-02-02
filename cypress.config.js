@@ -9,6 +9,7 @@ module.exports = defineConfig({
   screenshotOnRunFailure: true,
   trashAssetsBeforeRuns: true,
   reporter: 'cypress-mochawesome-reporter',
+  //experimentalStudio:true,
   reporterOptions: {
     charts: true,
     reportPageTitle: 'custom-title',

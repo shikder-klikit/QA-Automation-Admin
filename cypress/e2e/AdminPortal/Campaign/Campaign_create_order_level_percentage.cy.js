@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+import CampaignMethods from "../../../support/Common_methods/campaignMethods";
 describe('Campaign_create_order_level_percentage',function(){
     it('should load data', function(){
         cy.visitsite();
@@ -16,6 +18,18 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
         cy.enterMinCartValue();
+
+        cy.window().then((win) => {
+            const newDate = new Date(win.Date());
+            // do something usefull with the date
+            console.log('#############'+ newDate);
+        });
+
+        const campaign = new CampaignMethods();
+
+
+
+
 
     })
 })
