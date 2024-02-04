@@ -25,6 +25,7 @@ describe('Campaign_create_order_level_percentage',function(){
         //     // do something usefull with the date
         //     console.log('#############'+ newDate);
         //});
+        campaign.clickCampaignUser("everyone")
 
     })
 })

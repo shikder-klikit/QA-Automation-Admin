@@ -1,4 +1,9 @@
+import {el} from "@faker-js/faker";
+
 const next=".justify-end > .text-white"
+const campaignUser =".radio-container"
+const newUser=":nth-child(1) > .sc-radio-text"
+const everyone =":nth-child(2) > .sc-radio-text";
 const save = "";
 const closingHour = "";
 const openingHour = "";
@@ -36,6 +41,17 @@ class Campaign
     clickOnNext() {
         cy.get(next).click()
     }
+
+    clickCampaignUser(newuser_Or_everyone){
+
+        if (newuser_Or_everyone==="newuser")
+       {
+            cy.get(newUser).click()
+        }else
+        {
+            cy.get(everyone).click()
+        }
+}
 
 }
 export default Campaign
