@@ -16,6 +16,8 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
         cy.enterMinCartValue();
+        cy.selectDateFromCalendar_start('2024-02-07');
+        cy.selectDateFromCalendar_end('2024-02-10');
 
     })
 })

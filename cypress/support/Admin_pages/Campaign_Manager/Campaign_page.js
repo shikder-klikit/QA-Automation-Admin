@@ -6,6 +6,7 @@ before(function(){
 })
 
 import {faker} from "@faker-js/faker";
+import Pikaday from 'pikaday';
 
 Cypress.Commands.add('create_campaign', () =>{
     cy.get('.justify-end > .flex-row > .text-xs').click()
@@ -63,11 +64,41 @@ Cypress.Commands.add('enterMinCartValue',()=>{
     cy.get(':nth-child(3) > .flex-row > .flex-1 > .sc-input-container > .border-none').type(testData.data.DetailsAndConditions.minCartValue);
 })
 
-//cy.get(':nth-child(1) > .sc-radio-text') new user
-//cy.get(':nth-child(2) > .sc-radio-text') everyone
+Cypress.Commands.add('selectDateFromCalendar_start', (date) => {
+    cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').then(($input) => {
+        const picker = new Pikaday({
+            field: $input[0],
+            format: 'MMM D YYYY',  // Adjust the format based on your application's requirements
+            yearRange: [1900, 2100],  // Adjust the year range as needed
+            toString(date) {
+                const options = { month: 'short', day: 'numeric', year: 'numeric' };
+                const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+                return formattedDate.replace(',', '');
+            },
+        });
 
+        // Set the date using Pikaday
+        picker.setDate(date);
+    });
+});
 
+Cypress.Commands.add('selectDateFromCalendar_end', (date) => {
+    cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').then(($input) => {
+        const picker = new Pikaday({
+            field: $input[0],
+            format: 'MMM D YYYY',  // Adjust the format based on your application's requirements
+            yearRange: [1900, 2100],  // Adjust the year range as needed
+            toString(date) {
+                const options = { month: 'short', day: 'numeric', year: 'numeric' };
+                const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+                return formattedDate.replace(',', '');
+            },
+        });
 
+        // Set the date using Pikaday
+        picker.setDate(date);
+    });
+});
 
 
 
