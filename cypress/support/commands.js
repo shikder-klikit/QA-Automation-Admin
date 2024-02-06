@@ -4,3 +4,4 @@ import 'cypress-file-upload';
 import '@faker-js/faker'
 import 'cypress-wait-until';
 import './Admin_pages/Campaign_Manager/Campaign_page'
+import 'xpath_cypress';

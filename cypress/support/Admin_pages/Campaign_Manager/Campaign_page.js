@@ -6,7 +6,6 @@ before(function(){
 })
 
 import {faker} from "@faker-js/faker";
-import Pikaday from 'pikaday';
 
 Cypress.Commands.add('create_campaign', () =>{
     cy.get('.justify-end > .flex-row > .text-xs').click()
@@ -64,41 +63,27 @@ Cypress.Commands.add('enterMinCartValue',()=>{
     cy.get(':nth-child(3) > .flex-row > .flex-1 > .sc-input-container > .border-none').type(testData.data.DetailsAndConditions.minCartValue);
 })
 
-Cypress.Commands.add('selectDateFromCalendar_start', (date) => {
-    cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').then(($input) => {
-        const picker = new Pikaday({
-            field: $input[0],
-            format: 'MMM D YYYY',  // Adjust the format based on your application's requirements
-            yearRange: [1900, 2100],  // Adjust the year range as needed
-            toString(date) {
-                const options = { month: 'short', day: 'numeric', year: 'numeric' };
-                const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
-                return formattedDate.replace(',', '');
-            },
-        });
 
-        // Set the date using Pikaday
-        picker.setDate(date);
+Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDate) => {
+
+    // Select year
+    cy.get('.datepicker-header > :nth-child(2)').select(yearCount.toString());
+
+    // Select month
+    cy.get('.datepicker-header > :nth-child(3)').select(targetMonth);
+
+    // Select date
+    cy.get('.react-datepicker__day').each(($dateElement, index) => {
+        const dateText = $dateElement.text();
+        if (dateText.trim() === targetDate.toString()) {
+            cy.wrap($dateElement).click();
+            return false; // exit loop if date is found
+        }
     });
 });
-
-Cypress.Commands.add('selectDateFromCalendar_end', (date) => {
-    cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').then(($input) => {
-        const picker = new Pikaday({
-            field: $input[0],
-            format: 'MMM D YYYY',  // Adjust the format based on your application's requirements
-            yearRange: [1900, 2100],  // Adjust the year range as needed
-            toString(date) {
-                const options = { month: 'short', day: 'numeric', year: 'numeric' };
-                const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
-                return formattedDate.replace(',', '');
-            },
-        });
-
-        // Set the date using Pikaday
-        picker.setDate(date);
-    });
+Cypress.Commands.add("start", () => {
+    cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
 });
-
-
-
+Cypress.Commands.add("dayend", () => {
+    cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
+});
