@@ -10,7 +10,7 @@ const openingHour = "";
 const selectHour = "";
 const selectMinute = "";
 const startDate="";
-const startTime="";
+const startTimeParent=":nth-child(15) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label";
 const endDate="";
 const endTime = "";
 const availabilityStartTime="";
@@ -52,6 +52,28 @@ class Campaign
             cy.get(everyone).click()
         }
 }
+
+    // setStartTime30MinutesAhead() {
+    //     cy.get(startTime).click();
+    //     const currentDate = new Date();
+    //     const futureDate = new Date(currentDate.getTime() + 30 * 60000); // 30 minutes in milliseconds
+    //     const futureHour = futureDate.getHours();
+    //     const futureMinute = futureDate.getMinutes();
+    //
+    //     cy.get(selectHour).eq(futureHour).click();
+    //     cy.get(selectMinute).eq(futureMinute / 5).click();
+    // }
+    //
+    // setEndTime30MinutesAhead() {
+    //     cy.get(endTime).click();
+    //     const currentDate = new Date();
+    //     const futureDate = new Date(currentDate.getTime() + 30 * 60000); // 30 minutes in milliseconds
+    //     const futureHour = futureDate.getHours();
+    //     const futureMinute = futureDate.getMinutes();
+    //
+    //     cy.get(selectHour).eq(futureHour).click();
+    //     cy.get(selectMinute).eq(futureMinute / 5).click();
+    // }
 
 }
 export default Campaign
