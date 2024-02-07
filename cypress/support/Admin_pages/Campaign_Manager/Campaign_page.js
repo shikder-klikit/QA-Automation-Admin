@@ -53,8 +53,6 @@ Cypress.Commands.add('enterValueUpto',()=>{
 Cypress.Commands.add('enterMaxUsageLimit',()=>{
     cy.get(':nth-child(11) > :nth-child(1) > .flex-row > .flex-1 > .sc-input-container > .border-none').type(testData.data.DetailsAndConditions.maxUsageLimit);
 })
-
-
 Cypress.Commands.add('enterMaxUsePerUser',()=>{
     cy.get(':nth-child(11) > :nth-child(2) > .flex-row > .flex-1 > .sc-input-container').type(testData.data.DetailsAndConditions.maxUsePerUser);
 })
@@ -63,6 +61,16 @@ Cypress.Commands.add('enterMinCartValue',()=>{
     cy.get(':nth-child(3) > .flex-row > .flex-1 > .sc-input-container > .border-none').type(testData.data.DetailsAndConditions.minCartValue);
 })
 
+Cypress.Commands.add("start", () => {
+    cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
+});
+
+Cypress.Commands.add("dayend", () => {
+    cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
+});
+Cypress.Commands.add("endtime", () => {
+    cy.get(':nth-child(16) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click()
+});
 
 Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDate) => {
 
@@ -81,11 +89,22 @@ Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDa
         }
     });
 });
-Cypress.Commands.add("start", () => {
-    cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
-});
-Cypress.Commands.add("dayend", () => {
-    cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
+Cypress.Commands.add("selecttimeFrompicker", (targethour,targetminute) => {
+    // Select hour
+    cy.get('.hour-half >').each(($hourElement, index) => {
+        const hourText = $hourElement.text();
+        if (hourText.trim() === targethour.toString()) {
+            cy.wrap($hourElement).click();
+            return false; // exit loop if date is found
+        }
+    });
+    cy.get('.minute-half >').each(($minuteElement, index) => {
+        const minuteText = $minuteElement.text();
+        if (minuteText.trim() === targetminute.toString()) {
+            cy.wrap($minuteElement).click();
+            return false; // exit loop if date is found
+        }
+    });
 });
 
 Cypress.Commands.add("clickOnAddTime",()=>{
@@ -101,5 +120,5 @@ Cypress.Commands.add("clickOnTermsAndConditions",()=>{
 })
 
 Cypress.Commands.add("clickOnCreateCampaign",() => {
-    cy.get('.p-4.rounded-lg > .px-4').click().click({force:true});
+    cy.get('.p-4.rounded-lg > .px-4').type("{enter}");
 });

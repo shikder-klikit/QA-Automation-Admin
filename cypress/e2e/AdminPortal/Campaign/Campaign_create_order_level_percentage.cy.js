@@ -45,6 +45,8 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.selectDateFromCalendar(year, month, dayOfMonth);
         cy.dayend()
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
+        cy.endtime()
+        cy.selecttimeFrompicker(12,30)
 
         cy.log(`Day: ${dayOfMonth}`);
         cy.log(`Month: ${month}`);
@@ -52,7 +54,7 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.log(`Time: ${hours}:${minutes}:${seconds}`);
         cy.log(`Current Hour: ${hours}`);
         cy.log(`Current Minute: ${minutes}`);
-        
+
         cy.clickOnAddTime();
         cy.clickNextButton();
         cy.clickOnAggregator();
