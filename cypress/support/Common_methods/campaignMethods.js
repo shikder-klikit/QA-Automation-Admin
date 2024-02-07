@@ -16,6 +16,11 @@ const endTime = "";
 const availabilityStartTime="";
 const availabilityEndTime ="";
 
+export const UserType=  {
+    NewUser:'newuser',
+    EveryOne:'everyone'
+}
+
 class Campaign
 {
     clickedOnSave(){
@@ -42,9 +47,9 @@ class Campaign
         cy.get(next).click()
     }
 
-    clickCampaignUser(newuser_Or_everyone){
+    clickCampaignUser(userType){
 
-        if (newuser_Or_everyone==="newuser")
+        if (userType.NewUser)
        {
             cy.get(newUser).click()
         }else
@@ -53,27 +58,19 @@ class Campaign
         }
 }
 
-    // setStartTime30MinutesAhead() {
-    //     cy.get(startTime).click();
-    //     const currentDate = new Date();
-    //     const futureDate = new Date(currentDate.getTime() + 30 * 60000); // 30 minutes in milliseconds
-    //     const futureHour = futureDate.getHours();
-    //     const futureMinute = futureDate.getMinutes();
-    //
-    //     cy.get(selectHour).eq(futureHour).click();
-    //     cy.get(selectMinute).eq(futureMinute / 5).click();
-    // }
-    //
-    // setEndTime30MinutesAhead() {
-    //     cy.get(endTime).click();
-    //     const currentDate = new Date();
-    //     const futureDate = new Date(currentDate.getTime() + 30 * 60000); // 30 minutes in milliseconds
-    //     const futureHour = futureDate.getHours();
-    //     const futureMinute = futureDate.getMinutes();
-    //
-    //     cy.get(selectHour).eq(futureHour).click();
-    //     cy.get(selectMinute).eq(futureMinute / 5).click();
-    // }
+    setStartDate() {
+        // Get current date and time
+        const currentDate = new Date();
+        const currentDateTimeString = currentDate.toISOString(); // You can format it as needed
+        cy.selectDateFromCalendar_start(currentDateTimeString);
+
+    }
+    setEndDate() {
+        // Get current date and time
+        const currentDate = new Date();
+        const currentDateTimeString = currentDate.toISOString(); // You can format it as needed
+        cy.selectDateFromCalendar_end(currentDateTimeString);
+    }
 
 }
 export default Campaign

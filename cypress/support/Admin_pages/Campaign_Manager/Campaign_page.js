@@ -87,3 +87,19 @@ Cypress.Commands.add("start", () => {
 Cypress.Commands.add("dayend", () => {
     cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
 });
+
+Cypress.Commands.add("clickOnAddTime",()=>{
+    cy.get(':nth-child(20) > .flex-row').click();
+});
+
+Cypress.Commands.add("clickOnAggregator",()=>{
+    cy.get('.grid > :nth-child(2) > .sc-checkbox-container > .sc-checkbox').click();
+});
+
+Cypress.Commands.add("clickOnTermsAndConditions",()=>{
+    cy.get('.gap-x-12 > :nth-child(2) > .sc-checkbox-container > .sc-checkbox').click();
+})
+
+Cypress.Commands.add("clickOnCreateCampaign",() => {
+    cy.get('.p-4.rounded-lg > .px-4').click().click({force:true});
+});

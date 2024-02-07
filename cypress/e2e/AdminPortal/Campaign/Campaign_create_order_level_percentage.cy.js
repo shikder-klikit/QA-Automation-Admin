@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-import CampaignMethods from "../../../support/Common_methods/campaignMethods";
+import CampaignMethods, {UserType} from "../../../support/Common_methods/campaignMethods";
+import campaignMethods from "../../../support/Common_methods/campaignMethods";
 
 describe('Campaign_create_order_level_percentage',function(){
     it('should load data', function() {
@@ -20,84 +21,46 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
         cy.enterMinCartValue();
-        campaign.clickCampaignUser("everyone");
+
+        campaign.clickCampaignUser(UserType.EveryOne);
+
+        //Get current date and time
+         const currentDate = new Date();
+         cy.log('Current Date and Time: ' + currentDate);
+         const currentDateTimeString = currentDate.toISOString(); // You can format it as needed
+
+        // Log the current date and time
+        cy.log('Current Date and Time: ' + currentDateTimeString);
+        //cy.log(currentDateTimeString.getDate());
+
+
+        const year=currentDate.getFullYear();
+        const dayOfMonth = currentDate.getDate();
+        const month = currentDate.getMonth() //+ 1; // Months are zero-based, so we add 1
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+        const seconds = currentDate.getSeconds();
+
         cy.start()
-        cy.selectDateFromCalendar(2024, 'February', 15);
+        cy.selectDateFromCalendar(year, month, dayOfMonth);
         cy.dayend()
-        cy.selectDateFromCalendar(2024, 'February', 16);
+        cy.selectDateFromCalendar(year, month, dayOfMonth+1);
 
+        cy.log(`Day: ${dayOfMonth}`);
+        cy.log(`Month: ${month}`);
+        cy.log(`Year:${year}`);
+        cy.log(`Time: ${hours}:${minutes}:${seconds}`);
+        cy.log(`Current Hour: ${hours}`);
+        cy.log(`Current Minute: ${minutes}`);
+        
+        cy.clickOnAddTime();
+        cy.clickNextButton();
+        cy.clickOnAggregator();
+        cy.clickNextButton();
+        cy.clickOnTermsAndConditions();
+        cy.wait(2000);
+        cy.clickOnCreateCampaign();
 
-        // cy.get('.flex flex-row items-center gap-x-4 mt-4');
-        // cy.get('.flex flex-row items-center gap-x-4 mt-4').first();
-        // cy.get('.flex flex-row items-center gap-x-4 mt-4').last();
-
-        // // Get current date and time
-        // const currentDate = new Date();
-        // const currentDateTimeString = currentDate.toISOString(); // You can format it as needed
-        //
-        // // Log the current date and time
-        // cy.log('Current Date and Time: ' + currentDateTimeString);
-        // cy.log(currentDateTimeString.getDate());
-
-        // campaign.setStartTime30MinutesAhead();
-        // campaign.setEndTime30MinutesAhead();
-        // Now you can use the current date and time in your Cypress test as needed
-        // For example, you can use it in assertions or interact with your application
-
-       //  const currentDate = new Date();
-       //  const dayOfMonth = currentDate.getDate();
-       //  const month = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
-       //  const hours = currentDate.getHours();
-       //  const minutes = currentDate.getMinutes();
-       //  const seconds = currentDate.getSeconds();
-       //
-       //
-       //  const currentHour = currentDate.getHours();
-       //  const currentMinute = currentDate.getMinutes();
-       //
-       //  //cy.log(`Day: ${dayOfMonth}`);
-       //  //cy.log(`Month: ${month}`);
-       //  //cy.log(`Time: ${hours}:${minutes}:${seconds}`);
-       //  //cy.log(`Current Hour: ${currentHour}`);
-       //  //cy.log(`Current Minute: ${currentMinute}`);
-       //
-       //  cy.get(':nth-child(15) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click()
-       // // cy.get('.hour-half');
-       //  //cy.get('.hour-half > .sc-timepicker-dropdown-row__selected');
-       //
-       //  for (let hour = currentHour; hour <= 23; hour++) {
-       //      cy.get('.hour-half').contains(hour).click();
-       //
-       //      if (hour === currentHour) {
-       //          // Match found or reached the current hour, break out of the loop
-       //          return;
-       //      }
-       //
-       //      // Check if the selected hour matches the target hour
-       //      cy.get('.hour-half > .sc-timepicker-dropdown-row__selected').then(($selectedHour) => {
-       //              const selectedHour = parseInt($selectedHour.text(), 10);
-       //          }
-       //      )
-       //  }
-       //
-       //  cy.get(':nth-child(3) > :nth-child(1) > :nth-child(15)').click()
-       // //
-       //  cy.get('.minute-half').click();
-       //
-       //  for (let minute = currentMinute; minute <= 59; minute++) {
-       //      cy.get('.minute-half').contains(minute).click();
-       //
-       //      if (minute === currentMinute) {
-       //          // Match found or reached the current minute, break out of the loop
-       //          return;
-       //      }
-       //
-       //      // Check if the selected minute matches the target minute
-       //      cy.get('.minute-half > .sc-timepicker-dropdown-row__selected').then(($selectedMinute) => {
-       //          const selectedMinute = parseInt($selectedMinute.text(), 10);
-       //
-       //      })
-       //  }
     })
 })
 
