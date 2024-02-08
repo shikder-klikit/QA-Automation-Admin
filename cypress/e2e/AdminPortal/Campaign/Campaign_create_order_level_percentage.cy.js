@@ -52,7 +52,7 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.log(`Time: ${hours}:${minutes}:${seconds}`);
         cy.log(`Current Hour: ${hours}`);
         cy.log(`Current Minute: ${minutes}`);
-        
+
         cy.clickOnAddTime();
         cy.clickNextButton();
         cy.clickOnAggregator();
