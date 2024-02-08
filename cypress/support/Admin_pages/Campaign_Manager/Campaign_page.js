@@ -61,14 +61,14 @@ Cypress.Commands.add('enterMinCartValue',()=>{
     cy.get(':nth-child(3) > .flex-row > .flex-1 > .sc-input-container > .border-none').type(testData.data.DetailsAndConditions.minCartValue);
 })
 
-Cypress.Commands.add("start", () => {
+Cypress.Commands.add("clickOnStartDate", () => {
     cy.get(':nth-child(15) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
 });
 
-Cypress.Commands.add("dayend", () => {
+Cypress.Commands.add("clickOnEndDate", () => {
     cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
 });
-Cypress.Commands.add("endtime", () => {
+Cypress.Commands.add("ClickOnEndTime", () => {
     cy.get(':nth-child(16) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click()
 });
 
@@ -89,7 +89,7 @@ Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDa
         }
     });
 });
-Cypress.Commands.add("selecttimeFrompicker", (targethour,targetminute) => {
+Cypress.Commands.add("selectTimeFromPicker", (targethour,targetminute) => {
     // Select hour
     cy.get('.hour-half >').each(($hourElement, index) => {
         const hourText = $hourElement.text();
@@ -121,4 +121,16 @@ Cypress.Commands.add("clickOnTermsAndConditions",()=>{
 
 Cypress.Commands.add("clickOnCreateCampaign",() => {
     cy.get('.p-4.rounded-lg > .px-4').type("{enter}");
+});
+
+Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
+    cy.get(':nth-child(1) > .grid-cols-8 > .border-primary').click();
+})
+
+Cypress.Commands.add("availabilityStartTime",()=>{
+    cy.get('.mr-2 > .sc-timepicker > .sc-timepicker-label').click();
+})
+
+Cypress.Commands.add("availabilityEndTime",()=>{
+cy.get(':nth-child(1) > :nth-child(2) > .sc-timepicker > .sc-timepicker-label').click();
 });

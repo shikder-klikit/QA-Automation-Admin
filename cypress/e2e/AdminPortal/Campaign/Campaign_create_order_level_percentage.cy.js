@@ -41,21 +41,19 @@ describe('Campaign_create_order_level_percentage',function(){
         const minutes = currentDate.getMinutes();
         const seconds = currentDate.getSeconds();
 
-        cy.start()
+        cy.clickOnStartDate();
         cy.selectDateFromCalendar(year, month, dayOfMonth);
-        cy.dayend()
+        cy.clickOnEndDate();
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
-        cy.endtime()
-        cy.selecttimeFrompicker(12,30)
-
-        cy.log(`Day: ${dayOfMonth}`);
-        cy.log(`Month: ${month}`);
-        cy.log(`Year:${year}`);
-        cy.log(`Time: ${hours}:${minutes}:${seconds}`);
-        cy.log(`Current Hour: ${hours}`);
-        cy.log(`Current Minute: ${minutes}`);
+        cy.ClickOnEndTime();
+        cy.selectTimeFromPicker(hours,minutes)
 
         cy.clickOnAddTime();
+        cy.clickOnAvailabilityDefaultDay();
+        cy.availabilityStartTime();
+        cy.selectTimeFromPicker(0,0);
+        cy.availabilityEndTime();
+        cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
         cy.clickOnAggregator();
         cy.clickNextButton();
