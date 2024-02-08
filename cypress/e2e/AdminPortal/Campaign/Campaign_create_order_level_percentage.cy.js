@@ -45,6 +45,8 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.selectDateFromCalendar(year, month, dayOfMonth);
         cy.dayend()
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
+        cy.endtime()
+        cy.selecttimeFrompicker(12,30)
 
         cy.log(`Day: ${dayOfMonth}`);
         cy.log(`Month: ${month}`);
