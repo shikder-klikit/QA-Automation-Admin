@@ -120,7 +120,11 @@ Cypress.Commands.add("clickOnTermsAndConditions",()=>{
 })
 
 Cypress.Commands.add("clickOnCreateCampaign",() => {
-    cy.get('.p-4.rounded-lg > .px-4').type("{enter}");
+    cy.get('.p-4.rounded-lg > .px-4').click().wait(1000).click({force:true})
+
+    //todo
+    //Need to fix creating two campaign with the same name for the following command
+    //cy.get('.p-4.rounded-lg > .px-4').type("{enter}");
 });
 
 Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
