@@ -55,6 +55,5 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.clickOnTermsAndConditions();
         cy.wait(2000);
         cy.clickOnCreateCampaign();
-
     })
 })

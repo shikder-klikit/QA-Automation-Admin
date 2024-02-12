@@ -56,7 +56,6 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.clickOnTermsAndConditions();
         cy.wait(2000);
         cy.clickOnCreateCampaign();
-
     })
 })
 
