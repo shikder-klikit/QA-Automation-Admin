@@ -104,3 +104,7 @@ Cypress.Commands.add("availabilityStartTime",()=>{
 Cypress.Commands.add("availabilityEndTime",()=>{
 cy.get(':nth-child(1) > :nth-child(2) > .sc-timepicker > .sc-timepicker-label').click();
 });
+
+Cypress.Commands.add("clickOnFlatDiscount",()=>{
+    cy.get(':nth-child(3) > :nth-child(1) > .grid-cols-3 > :nth-child(2)').click();
+})
