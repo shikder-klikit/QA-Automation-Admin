@@ -81,6 +81,10 @@ Cypress.Commands.add("clickOnAggregator",()=>{
     cy.get('.grid > :nth-child(2) > .sc-checkbox-container > .sc-checkbox').click();
 });
 
+Cypress.Commands.add("clickOnAggregator",(grab)=>{
+    cy.get('.w-full > .sc-checkbox-container > .sc-checkbox').click();
+})
+
 Cypress.Commands.add("clickOnTermsAndConditions",()=>{
     cy.get('.gap-x-12 > :nth-child(2) > .sc-checkbox-container > .sc-checkbox').click();
 })
@@ -107,4 +111,8 @@ cy.get(':nth-child(1) > :nth-child(2) > .sc-timepicker > .sc-timepicker-label').
 
 Cypress.Commands.add("clickOnFlatDiscount",()=>{
     cy.get(':nth-child(3) > :nth-child(1) > .grid-cols-3 > :nth-child(2)').click();
+})
+
+Cypress.Commands.add("clickOnDeliveryFeeDiscount",()=>{
+    cy.get(':nth-child(3) > :nth-child(1) > .grid-cols-3 > :nth-child(3)').click();
 })

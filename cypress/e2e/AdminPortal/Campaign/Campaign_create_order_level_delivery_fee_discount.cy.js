@@ -1,7 +1,7 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
 
-describe('Campaign_create_order_level_percentage_flat_discount',function(){
-    it('should create new campaign with flat discount', function() {
+describe('Campaign_create_order_level_percentage_delivery_fee_discount',function(){
+    it('should create new campaign with delivery fee discount', function() {
         cy.visitsite();
         cy.login_as_automationAdmin();
         cy.select_campaign();
@@ -14,7 +14,7 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         const campaign = new UtilityMethods();
         campaign.clickOnNext();
         campaign.clickOnNext();
-        cy.clickOnFlatDiscount();
+        cy.clickOnDeliveryFeeDiscount();
         cy.enterValue();
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
@@ -50,7 +50,7 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregator();
+        cy.clickOnAggregator('grab');
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);
