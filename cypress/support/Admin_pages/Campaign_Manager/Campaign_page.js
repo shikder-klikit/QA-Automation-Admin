@@ -72,40 +72,6 @@ Cypress.Commands.add("ClickOnEndTime", () => {
     cy.get(':nth-child(16) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click()
 });
 
-Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDate) => {
-
-    // Select year
-    cy.get('.datepicker-header > :nth-child(2)').select(yearCount.toString());
-
-    // Select month
-    cy.get('.datepicker-header > :nth-child(3)').select(targetMonth);
-
-    // Select date
-    cy.get('.react-datepicker__day').each(($dateElement, index) => {
-        const dateText = $dateElement.text();
-        if (dateText.trim() === targetDate.toString()) {
-            cy.wrap($dateElement).click();
-            return false; // exit loop if date is found
-        }
-    });
-});
-Cypress.Commands.add("selectTimeFromPicker", (targethour,targetminute) => {
-    // Select hour
-    cy.get('.hour-half >').each(($hourElement, index) => {
-        const hourText = $hourElement.text();
-        if (hourText.trim() === targethour.toString()) {
-            cy.wrap($hourElement).click();
-            return false; // exit loop if date is found
-        }
-    });
-    cy.get('.minute-half >').each(($minuteElement, index) => {
-        const minuteText = $minuteElement.text();
-        if (minuteText.trim() === targetminute.toString()) {
-            cy.wrap($minuteElement).click();
-            return false; // exit loop if date is found
-        }
-    });
-});
 
 Cypress.Commands.add("clickOnAddTime",()=>{
     cy.get(':nth-child(20) > .flex-row').click();

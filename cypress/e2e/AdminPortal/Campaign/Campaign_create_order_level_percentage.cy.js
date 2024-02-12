@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
-import CampaignMethods, {UserType} from "../../../support/Common_methods/campaignMethods";
-import campaignMethods from "../../../support/Common_methods/campaignMethods";
+import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
 
 describe('Campaign_create_order_level_percentage',function(){
-    it('should load data', function() {
+    it('should create new campaign', function() {
         cy.visitsite();
         cy.login_as_automationAdmin();
         cy.select_campaign();
@@ -12,8 +11,8 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterBusinessName()
         cy.enterBrand();
         cy.enterBranchData();
-        cy.clickCloseButton;
-        const campaign = new CampaignMethods();
+        cy.clickCloseButton();
+        const campaign = new UtilityMethods();
         campaign.clickOnNext()
         campaign.clickOnNext()
         cy.enterValue();
@@ -21,7 +20,6 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterMaxUsageLimit();
         cy.enterMaxUsePerUser();
         cy.enterMinCartValue();
-
         campaign.clickCampaignUser(UserType.EveryOne);
 
         //Get current date and time
@@ -32,7 +30,6 @@ describe('Campaign_create_order_level_percentage',function(){
         // Log the current date and time
         cy.log('Current Date and Time: ' + currentDateTimeString);
         //cy.log(currentDateTimeString.getDate());
-
 
         const year=currentDate.getFullYear();
         const dayOfMonth = currentDate.getDate();
@@ -47,7 +44,6 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
         cy.ClickOnEndTime();
         cy.selectTimeFromPicker(hours,minutes)
-
         cy.clickOnAddTime();
         cy.clickOnAvailabilityDefaultDay();
         cy.availabilityStartTime();
