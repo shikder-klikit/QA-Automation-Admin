@@ -1,0 +1,14 @@
+{
+  "General": {
+      "business": "ShadowChef",
+      "brand": "Cluccboi",
+      "location": "Ashmore3"
+  },
+  "DetailsAndConditions": {
+    "value": "20",
+    "valueUpto": "500",
+    "maxUsageLimit": "6",
+    "maxUsePerUser": "2",
+    "minCartValue": "100"
+  }
+}
