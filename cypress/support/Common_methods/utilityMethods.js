@@ -4,7 +4,7 @@ const next=".justify-end > .text-white"
 const campaignUser =".radio-container"
 const newUser=":nth-child(1) > .sc-radio-text"
 const everyone =":nth-child(2) > .sc-radio-text";
-const save = "";
+const save = ".justify-between > .text-sm";
 const closingHour = "";
 const openingHour = "";
 const selectHour = "";
@@ -15,6 +15,8 @@ const endDate="";
 const endTime = "";
 const availabilityStartTime="";
 const availabilityEndTime ="";
+const clicknewbutton = ".px-4"
+const clickoncheckbox = ".sc-checkbox"
 
 export const UserType=  {
     NewUser:'newuser',
@@ -24,7 +26,7 @@ export const UserType=  {
 class UtilityMethods
 {
     clickedOnSave(){
-        cy.xpath(save).click({force:true})
+        cy.get(save).click({force:true})
     }
 
     clickedOnOpeningHourAndSelectedRandomValue(){
@@ -45,6 +47,12 @@ class UtilityMethods
 
     clickOnNext() {
         cy.get(next).click()
+    }
+    clickOnNew() {
+        cy.get(clicknewbutton).click()
+    }
+    clickoncheckbox() {
+        cy.get(clickoncheckbox).click()
     }
 
     clickCampaignUser(userType){

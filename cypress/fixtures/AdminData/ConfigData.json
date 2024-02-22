@@ -1,0 +1,16 @@
+{
+  "Business":{
+    "Name": "Automated business",
+    "business_klikitfee": "5",
+    "searchBusiness" : "shadowchef"
+  },
+
+  "Brand": {
+      "ss": "",
+      "ssd": ""
+    },
+    "Location": {
+      "dd": "",
+      "ff": ""
+    }
+  }

@@ -4,11 +4,9 @@ before(function(){
         testData.data =data
     })
 })
-
 Cypress.Commands.add('visitsite',() =>{
     cy.visit(testData.data.sideloading.siteURL)
-    })
-
+})
 Cypress.Commands.add('login_as_automationAdmin', () =>{
     cy.wait(1000)
     cy.get('#username').type(testData.data.Admin.automation_admin.user_email)
@@ -30,7 +28,6 @@ Cypress.Commands.add('login_as_sabbir', () =>{
     cy.wait(1000)
     cy.get('form > .w-full').click()
 })
-
 Cypress.Commands.add('logout', () =>{
     cy.wait(2000)
     cy.get('.scam-user-info-dd').click()
