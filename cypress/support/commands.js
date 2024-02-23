@@ -1,6 +1,7 @@
 import './Admin_pages/Login_Page'
 import './Admin_pages/Landing_page'
-import './Admin_pages/businessPage'
+import './Admin_pages/BusinessPage'
+import './Admin_pages/BrandPage'
 import 'cypress-file-upload';
 import '@faker-js/faker'
 import 'cypress-wait-until';

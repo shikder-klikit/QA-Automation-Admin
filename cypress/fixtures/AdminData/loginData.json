@@ -1,6 +1,7 @@
 {
     "sideloading":{
-        "siteURL": "https://admin.dev.shadowchef.co"
+        "siteURL": "https://admin.dev.shadowchef.co",
+        "homeurl": "https://admin.dev.shadowchef.co/oni?tab=all"
     },
 
     "Admin":{

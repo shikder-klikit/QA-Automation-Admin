@@ -7,12 +7,25 @@ before(function(){
 Cypress.Commands.add('visitsite',() =>{
     cy.visit(testData.data.sideloading.siteURL)
 })
+Cypress.Commands.add('visithomepage',() =>{
+    cy.visit(testData.data.sideloading.homeurl)
+})
 Cypress.Commands.add('login_as_automationAdmin', () =>{
     cy.wait(1000)
     cy.get('#username').type(testData.data.Admin.automation_admin.user_email)
     cy.get('#password').type(testData.data.Admin.automation_admin.user_password)
     cy.wait(1000)
     cy.get('form > .w-full').click()
+})
+Cypress.Commands.add('login_as_automationAdmin_withsession', () =>{
+    cy.session(['bis_data'], () => {
+            cy.visitsite()
+            cy.login_as_automationAdmin()
+            cy.url().should('contain', '/oni?tab=all')
+        },
+        {
+            cacheAcrossSpecs: true
+        })
 })
 Cypress.Commands.add('login_as_shikder', () =>{
     cy.wait(1000)

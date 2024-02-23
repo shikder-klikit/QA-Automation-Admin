@@ -6,8 +6,12 @@
   },
 
   "Brand": {
-      "ss": "",
-      "ssd": ""
+      "Name": "Automated brand",
+      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
+      "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
+      "selectBusiness": "504",
+      "selectBranch": "820",
+      "searchBrand" : "meat theory"
     },
     "Location": {
       "dd": "",
