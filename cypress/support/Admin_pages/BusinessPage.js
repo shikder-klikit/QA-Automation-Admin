@@ -26,6 +26,6 @@ Cypress.Commands.add('business_Select_PricingGroups',() =>{
 })
 //search business
 Cypress.Commands.add('business_search',() =>{
-    cy.get('.border').type(testData.data.Business.searchBusiness).wait(2000)
-    cy.contains(testData.data.Business.searchBusiness).click()
+    cy.get('.border').type(testData.data.search.Business.name).wait(2000)
+    cy.contains(testData.data.search.Business.name).click()
 })

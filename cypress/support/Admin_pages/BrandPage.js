@@ -29,3 +29,11 @@ Cypress.Commands.add('Select_Branch_forbrand', () =>{
     cy.contains(testData.data.Brand.selectBranch).click().wait(2000)
     cy.get('.width > :nth-child(2)').click()
 })
+Cypress.Commands.add('Search_Business_forbrand', () =>{
+    cy.get('.flex.mb-4 > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.search.Brand.business).wait(2000).type(' ').wait(2000).type('{backspace}')
+    cy.contains(testData.data.search.Brand.business).click()
+})
+Cypress.Commands.add('Search_brand', () =>{
+    cy.get('.border').type(testData.data.search.Brand.brandname).wait(2000)
+    cy.contains(testData.data.search.Brand.brandname).click()
+})

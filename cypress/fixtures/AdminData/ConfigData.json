@@ -1,8 +1,7 @@
 {
   "Business":{
     "Name": "Automated business",
-    "business_klikitfee": "5",
-    "searchBusiness" : "shadowchef"
+    "business_klikitfee": "5"
   },
 
   "Brand": {
@@ -10,11 +9,20 @@
       "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
       "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
       "selectBusiness": "504",
-      "selectBranch": "820",
-      "searchBrand" : "meat theory"
-    },
-    "Location": {
+      "selectBranch": "820"
+  },
+  "Location": {
       "dd": "",
       "ff": ""
+  },
+
+  "search": {
+    "Business": {
+      "name" : "shadowchef"
+    },
+    "Brand" : {
+      "business": "Shikder dev ltd",
+      "brandname" : "meat theory"
     }
   }
+}
