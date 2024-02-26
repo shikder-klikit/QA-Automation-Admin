@@ -2,7 +2,7 @@
   "scripts": {
     "cy_run": "cypress run",
     "cy_run_recorded": "cypress run --record",
-    "clean:reports": "rm -rf cypress/reports/html || true",
+    "clean:reports": "rm -rf cypress/reports || true",
     "clean:screenshots": "rm -rf cypress/screenshots || true",
     "clean:videos": "rm -rf cypress/videos || true",
     "clean:downloads": "rm -rf cypress/downloads || true",
