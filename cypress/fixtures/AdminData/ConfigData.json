@@ -12,8 +12,15 @@
       "selectBranch": "820"
   },
   "Location": {
-      "dd": "",
-      "ff": ""
+      "Name": "Automated Location",
+      "phone": "+639177037512",
+      "Latitude":"14.57434052362601",
+      "Longitude": "120.98672535199167",
+      "city": "manila",
+      "SalesPackage":"Plus",
+      "RestaurantServiceFee": "5",
+      "selectBusiness": "504",
+      "selectBrand": "464"
   },
 
   "search": {

@@ -1,0 +1,35 @@
+import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+const location = new UtilityMethods()
+const login = () => {
+    cy.login_as_automationAdmin_withsession()
+}
+describe('Create Location',function(){
+    beforeEach(() => {
+        login('user')
+        cy.visithomepage()
+    })
+    it('should create location from admin', function(){
+        cy.select_Location()
+        location.clickOnNew()
+        cy.Add_location_Name(6,12)
+        cy.Add_phone()
+        cy.Add_Address()
+        cy.Add_Latitude()
+        cy.Add_Longitude()
+        location.selectSunday()
+        location.selectMonday()
+        location.selectTuesday()
+        location.selectWednesday()
+        location.selectThursday()
+        location.selectFriday()
+        location.selectSaturday()
+        cy.select_City()
+        cy.select_SalesPackage()
+        cy.Add_RestaurantServiceFee()
+        cy.Select_Business_forlocation()
+        cy.Select_Brand_forlocation()
+        cy.Use_MenuV2()
+        cy.get(':nth-child(15) > .text-sm').click()
+        // location.clickedOnSave()
+    })
+})

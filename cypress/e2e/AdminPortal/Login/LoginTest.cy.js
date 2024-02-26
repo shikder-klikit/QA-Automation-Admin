@@ -1,12 +1,12 @@
 const login = () => {
     cy.login_as_automationAdmin_withsession()
 }
-describe('visitsite',function(){
+describe('visitsite & login',function(){
     beforeEach(() => {
         login('user')
         cy.visithomepage()
     })
-    it('should load data', function(){
+    it('should logout', function(){
       cy.logout()
   })
 })

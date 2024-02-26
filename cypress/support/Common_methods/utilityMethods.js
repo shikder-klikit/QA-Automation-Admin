@@ -17,7 +17,13 @@ const availabilityStartTime="";
 const availabilityEndTime ="";
 const clicknewbutton = ".px-4"
 const clickoncheckbox = ".sc-checkbox"
-
+const Sunday=".sc-tg > div:nth-of-type(1)"
+const Monday=".sc-tg > div:nth-of-type(2)"
+const Tuesday=".sc-tg > div:nth-of-type(3)"
+const Wednesday=".sc-tg > div:nth-of-type(4)"
+const Thursday=".sc-tg > div:nth-of-type(5)"
+const Friday=".sc-tg > div:nth-of-type(6)"
+const Saturday=".sc-tg > div:nth-of-type(7)"
 export const UserType=  {
     NewUser:'newuser',
     EveryOne:'everyone'
@@ -53,6 +59,27 @@ class UtilityMethods
     }
     clickoncheckbox() {
         cy.get(clickoncheckbox).click()
+    }
+    selectSunday(){
+        cy.get(Sunday).click()
+    }
+    selectMonday(){
+        cy.get(Monday).click()
+    }
+    selectTuesday(){
+        cy.get(Tuesday).click()
+    }
+    selectWednesday(){
+        cy.get(Wednesday).click()
+    }
+    selectThursday(){
+        cy.get(Thursday).click()
+    }
+    selectFriday(){
+        cy.get(Friday).click()
+    }
+    selectSaturday(){
+        cy.get(Saturday).click()
     }
 
     clickCampaignUser(userType){

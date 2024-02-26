@@ -1,9 +1,14 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
 const brand = new UtilityMethods()
-describe('visitsite',function(){
-    it('should load data', function(){
-        cy.visitsite()
-        cy.login_as_automationAdmin()
+const login = () => {
+    cy.login_as_automationAdmin_withsession()
+}
+describe('create Brand',function(){
+    beforeEach(() => {
+        login('user')
+        cy.visithomepage()
+    })
+    it('should create brand from admin', function(){
         cy.select_Brand()
         brand.clickOnNew()
         cy.Add_brand_Name(6,12)

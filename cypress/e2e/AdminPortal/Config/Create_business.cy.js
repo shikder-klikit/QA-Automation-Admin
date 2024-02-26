@@ -1,9 +1,14 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
 const business = new UtilityMethods()
-describe('visitsite',function(){
-    it('should load data', function(){
-        cy.visitsite()
-        cy.login_as_automationAdmin()
+const login = () => {
+    cy.login_as_automationAdmin_withsession()
+}
+describe('create Business',function(){
+    beforeEach(() => {
+        login('user')
+        cy.visithomepage()
+    })
+    it('should create business from admin', function(){
         cy.select_Business()
         business.clickOnNew()
         cy.business_name(4,6)
