@@ -4,10 +4,10 @@ before(function(){
         testData.data =data
     })
 })
-Cypress.Commands.add('visitsite',() =>{
+Cypress.Commands.add('VisitSite',() =>{
     cy.visit(testData.data.sideloading.siteURL)
 })
-Cypress.Commands.add('visithomepage',() =>{
+Cypress.Commands.add('VisitHomePage',() =>{
     cy.visit(testData.data.sideloading.homeurl)
 })
 Cypress.Commands.add('LoginAsAutomationAdmin', () =>{
@@ -19,7 +19,7 @@ Cypress.Commands.add('LoginAsAutomationAdmin', () =>{
 })
 Cypress.Commands.add('LoginAsAutomationAdminWithsession', () =>{
     cy.session(['bis_data'], () => {
-            cy.visitsite()
+            cy.VisitSite()
             cy.LoginAsAutomationAdmin()
             cy.url().should('contain', '/oni?tab=all')
         },
@@ -27,21 +27,21 @@ Cypress.Commands.add('LoginAsAutomationAdminWithsession', () =>{
             cacheAcrossSpecs: true
         })
 })
-Cypress.Commands.add('login_as_shikder', () =>{
+Cypress.Commands.add('LoginAsShikder', () =>{
     cy.wait(1000)
     cy.get('#username').type(testData.data.Admin.shikder.user_email)
     cy.get('#password').type(testData.data.Admin.shikder.user_password)
     cy.wait(1000)
     cy.get('form > .w-full').click()
 })
-Cypress.Commands.add('login_as_sabbir', () =>{
+Cypress.Commands.add('LoginAsSabbir', () =>{
     cy.wait(1000)
     cy.get('#username').type(testData.data.Admin.sabbir.user_email)
     cy.get('#password').type(testData.data.Admin.sabbir.user_password)
     cy.wait(1000)
     cy.get('form > .w-full').click()
 })
-Cypress.Commands.add('logout', () =>{
+Cypress.Commands.add('Logout', () =>{
     cy.wait(2000)
     cy.get('.scam-user-info-dd').click()
     cy.wait(2000)

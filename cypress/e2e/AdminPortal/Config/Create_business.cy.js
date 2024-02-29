@@ -6,10 +6,10 @@ const login = () => {
 describe('create Business',function(){
     beforeEach(() => {
         login('user')
-        cy.visithomepage()
+        cy.VisitHomePage()
     })
     it('should create business from admin', function(){
-        cy.select_Business()
+        cy.SelectBusiness()
         business.clickOnNew()
         cy.AddBusinessName(4,6)
         cy.AddBusinessAddress(15,25)

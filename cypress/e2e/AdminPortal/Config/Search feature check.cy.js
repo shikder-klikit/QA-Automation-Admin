@@ -4,10 +4,10 @@ const login = () => {
 describe('Search function check', () => {
     beforeEach(() => {
         login('user')
-        cy.visithomepage()
+        cy.VisitHomePage()
     })
     it('search the business', () => {
-        cy.select_Business()
+        cy.SelectBusiness()
         cy.BusinessSearch()
     })
     it('search the brand with business', () => {

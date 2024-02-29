@@ -6,7 +6,7 @@ const login = () => {
 describe('create Brand',function(){
     beforeEach(() => {
         login('user')
-        cy.visithomepage()
+        cy.VisitHomePage()
     })
     it('should create brand from admin', function(){
         cy.selectBrand()
