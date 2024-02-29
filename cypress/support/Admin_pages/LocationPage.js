@@ -20,7 +20,7 @@ Cypress.Commands.add('Add_Latitude', () =>{
 Cypress.Commands.add('Add_Longitude', () =>{
     cy.get(':nth-child(4) > :nth-child(2) > .border').type(testData.data.Location.Longitude)
 })
-Cypress.Commands.add('select_City', () =>{
+Cypress.Commands.add('SelectCity', () =>{
     cy.get('.flex-col > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.city+' ').wait(2000)
     cy.get('.sc-select-dropdown > :nth-child(2) > span').as('btn').click({force:true})
 })

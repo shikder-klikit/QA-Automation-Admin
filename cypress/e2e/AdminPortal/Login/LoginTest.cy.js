@@ -1,5 +1,5 @@
 const login = () => {
-    cy.login_as_automationAdmin_withsession()
+    cy.LoginAsAutomationAdminWithsession()
 }
 describe('visitsite & login',function(){
     beforeEach(() => {

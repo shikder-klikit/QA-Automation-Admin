@@ -1,5 +1,5 @@
 const login = () => {
-    cy.login_as_automationAdmin_withsession()
+    cy.LoginAsAutomationAdminWithsession()
 }
 describe('Pro menu check', () => {
     beforeEach(() => {
@@ -37,7 +37,7 @@ describe('Pro menu check', () => {
     it('search the config', () => {
         cy.select_Add_Order_Config()
         cy.select_Business()
-        cy.select_Brand()
+        cy.selectBrand()
         cy.select_Location()
         cy.select_Printer_settings()
         cy.select_Image_manager()

@@ -1,7 +1,7 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
 const location = new UtilityMethods()
 const login = () => {
-    cy.login_as_automationAdmin_withsession()
+    cy.LoginAsAutomationAdminWithsession()
 }
 describe('Create Location',function(){
     beforeEach(() => {
@@ -23,7 +23,7 @@ describe('Create Location',function(){
         location.selectThursday()
         location.selectFriday()
         location.selectSaturday()
-        cy.select_City()
+        cy.SelectCity()
         cy.select_SalesPackage()
         cy.Add_RestaurantServiceFee()
         cy.Select_Business_forlocation()

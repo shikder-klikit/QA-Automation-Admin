@@ -82,7 +82,7 @@ Cypress.Commands.add('select_Location', () =>{
     cy.wait(1000)
     cy.contains('Location').click()
 })
-Cypress.Commands.add('select_Brand', () =>{
+Cypress.Commands.add('selectBrand', () =>{
     cy.wait(1000)
     cy.contains('Brand').click()
 })
