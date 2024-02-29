@@ -2,11 +2,11 @@ import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityM
 
 describe('Campaign_create_order_level_percentage_flat_discount',function(){
     it('should create new campaign with flat discount', function() {
-        cy.visitsite();
-        cy.login_as_automationAdmin();
-        cy.select_campaign();
-        cy.create_campaign();
-        cy.enter_campaign_name();
+        cy.VisitSite();
+        cy.LoginAsAutomationAdmin();
+        cy.SelectCampaign();
+        cy.CreateCampaign();
+        cy.EnterCampaignName();
         cy.enterBusinessName()
         cy.enterBrand();
         cy.enterBranchData();

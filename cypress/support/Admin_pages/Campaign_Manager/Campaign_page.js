@@ -1,21 +1,21 @@
 let testData= {}
 before(function(){
-    cy.fixture('CloudApp/campaignData.json').as('Campaign_dataset').then(function(data){
+    cy.fixture('AdminData/campaignData.json').as('Campaign_dataset').then(function(data){
         testData.data =data
     })
 })
 
 import {faker} from "@faker-js/faker";
 
-Cypress.Commands.add('create_campaign', () =>{
+Cypress.Commands.add('CreateCampaign', () =>{
     cy.get('.justify-end > .flex-row > .text-xs').click()
 })
 
-Cypress.Commands.add('enter_campaign_name',()=>{
+Cypress.Commands.add('EnterCampaignName',()=>{
     cy.get('.sc-input-container > .border').type("automation "+faker.lorem.word(8,8))
     })
 
-Cypress.Commands.add('pick_business',()=>{
+Cypress.Commands.add('PickBusiness',()=>{
     cy.get(':nth-child(1) > .sc-select-container > .sc-selector > .sc-select-placeholder').click()
 })
 

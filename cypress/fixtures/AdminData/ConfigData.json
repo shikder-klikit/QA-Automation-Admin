@@ -1,0 +1,35 @@
+{
+  "Business":{
+    "Name": "Automated business",
+    "business_klikitfee": "5"
+  },
+
+  "Brand": {
+      "Name": "Automated brand",
+      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
+      "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
+      "selectBusiness": "504",
+      "selectBranch": "820"
+  },
+  "Location": {
+      "Name": "Automated Location",
+      "phone": "+639177037512",
+      "Latitude":"14.57434052362601",
+      "Longitude": "120.98672535199167",
+      "city": "manila",
+      "SalesPackage":"Plus",
+      "RestaurantServiceFee": "5",
+      "selectBusiness": "504",
+      "selectBrand": "464"
+  },
+
+  "search": {
+    "Business": {
+      "name" : "shadowchef"
+    },
+    "Brand" : {
+      "business": "Shikder dev ltd",
+      "brandname" : "meat theory"
+    }
+  }
+}

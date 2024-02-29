@@ -1,10 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "",
+  projectId: 'z6sayv',
   chromeWebSecurity: false,
   watchForFileChanges: true,
   experimentalWebKitSupport: false,
+  experimentalMemoryManagement: true,
   video: true,
   screenshotOnRunFailure: true,
   trashAssetsBeforeRuns: true,
@@ -26,6 +27,9 @@ module.exports = defineConfig({
     openMode: 0,
   },
   e2e: {
+    experimentalOriginDependencies: true,
+    experimentalRunAllSpecs: true,
+    video:true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
