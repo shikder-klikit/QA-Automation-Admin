@@ -1,0 +1,21 @@
+{
+    "sideloading":{
+        "siteURL": "https://admin.dev.shadowchef.co",
+        "homeurl": "https://admin.dev.shadowchef.co/oni?tab=all"
+    },
+
+    "Admin":{
+        "automation_admin": {
+            "user_email": "automation.admin@vivasoftltd.com",
+            "user_password": "Asdasd123!"
+        },
+        "shikder": {
+            "user_email": "ehatesham.islam@vivasoftltd.com",
+            "user_password": "Asdasd123!"
+        },
+        "sabbir": {
+            "user_email": "ehatesham.islam@vivasoftltd.com",
+            "user_password": "Asdasd123!"
+        }
+    }
+}

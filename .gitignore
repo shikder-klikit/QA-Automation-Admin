@@ -1,0 +1,23 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+/.idea/
+
+/node_modules/
+
+/cypress/reports/
+/cypress/videos/
+/cypress/downloads/
+/mochawesome.json
+/cypress/support/component.js
+/cypress/support/component-index.html
+/webpack.config.js
