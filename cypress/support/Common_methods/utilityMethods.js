@@ -24,9 +24,16 @@ const Wednesday=".sc-tg > div:nth-of-type(4)"
 const Thursday=".sc-tg > div:nth-of-type(5)"
 const Friday=".sc-tg > div:nth-of-type(6)"
 const Saturday=".sc-tg > div:nth-of-type(7)"
-export const UserType=  {
+const klikit="//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]";
+const grab="//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]";
+export const UserType= {
     NewUser:'newuser',
     EveryOne:'everyone'
+}
+
+export const Aggregator = {
+    KlikIt:'klikit',
+    Grab:'grab'
 }
 
 class UtilityMethods
@@ -91,7 +98,17 @@ class UtilityMethods
         {
             cy.get(everyone).click()
         }
-}
+    }
+
+    clickAggregator(aggregatorName){
+
+        if(Aggregator.Grab){
+            cy.xpath(grab).click();
+        }
+        else if(Aggregator.KlikIt){
+            cy.xpath(klikit).click();
+        }
+    }
 
     setStartDate() {
         // Get current date and time
