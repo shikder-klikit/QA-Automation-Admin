@@ -77,8 +77,13 @@ Cypress.Commands.add("clickOnAddTime",()=>{
     cy.get(':nth-child(20) > .flex-row').click();
 });
 
-Cypress.Commands.add("clickOnAggregator",()=>{
-    cy.get('.grid > :nth-child(2) > .sc-checkbox-container > .sc-checkbox').click();
+Cypress.Commands.add("clickOnAggregatorFromMultipleAggregator",(nameOfAggregator)=>{
+    if(nameOfAggregator==="klikit"){
+        cy.xpath("//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]").click();
+
+    }else if (nameOfAggregator==="grab"){
+        cy.xpath("//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]").click();
+    }
 });
 
 Cypress.Commands.add("clickOnAggregator",(grab)=>{

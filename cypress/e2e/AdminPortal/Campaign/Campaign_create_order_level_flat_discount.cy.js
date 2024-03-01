@@ -50,7 +50,7 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregator();
+        cy.clickOnAggregatorFromMultipleAggregator('grab');
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);
