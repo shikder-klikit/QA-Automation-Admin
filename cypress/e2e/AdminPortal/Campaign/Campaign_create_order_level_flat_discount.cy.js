@@ -1,9 +1,14 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
-
+const campaign = new UtilityMethods();
+const login = () => {
+    cy.LoginAsAutomationAdminWithsession()
+}
 describe('Campaign_create_order_level_percentage_flat_discount',function(){
+    beforeEach(() => {
+        login('user')
+        cy.VisitHomePage()
+    })
     it('should create new campaign with flat discount', function() {
-        cy.VisitSite();
-        cy.LoginAsAutomationAdmin();
         cy.SelectCampaign();
         cy.CreateCampaign();
         cy.EnterCampaignName();
@@ -11,7 +16,6 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.enterBrand();
         cy.enterBranchData();
         cy.clickCloseButton();
-        const campaign = new UtilityMethods();
         campaign.clickOnNext();
         campaign.clickOnNext();
         cy.clickOnFlatDiscount();
@@ -50,7 +54,7 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregator();
+        cy.clickOnAggregatorFromMultipleAggregator('grab');
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);

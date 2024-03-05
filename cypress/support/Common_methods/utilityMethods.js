@@ -15,7 +15,7 @@ const endDate="";
 const endTime = "";
 const availabilityStartTime="";
 const availabilityEndTime ="";
-const clicknewbutton = ".px-4"
+const clicknewbutton = ".bg-white > :nth-child(1) > :nth-child(4)"
 const clickoncheckbox = ".sc-checkbox"
 const Sunday=".sc-tg > div:nth-of-type(1)"
 const Monday=".sc-tg > div:nth-of-type(2)"
@@ -24,9 +24,16 @@ const Wednesday=".sc-tg > div:nth-of-type(4)"
 const Thursday=".sc-tg > div:nth-of-type(5)"
 const Friday=".sc-tg > div:nth-of-type(6)"
 const Saturday=".sc-tg > div:nth-of-type(7)"
-export const UserType=  {
+const klikit="//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]";
+const grab="//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]";
+export const UserType= {
     NewUser:'newuser',
     EveryOne:'everyone'
+}
+
+export const Aggregator = {
+    KlikIt:'klikit',
+    Grab:'grab'
 }
 
 class UtilityMethods
@@ -91,7 +98,17 @@ class UtilityMethods
         {
             cy.get(everyone).click()
         }
-}
+    }
+
+    clickAggregator(aggregatorName){
+
+        if(Aggregator.Grab){
+            cy.xpath(grab).click();
+        }
+        else if(Aggregator.KlikIt){
+            cy.xpath(klikit).click();
+        }
+    }
 
     setStartDate() {
         // Get current date and time

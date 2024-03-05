@@ -22,7 +22,6 @@
       "selectBusiness": "504",
       "selectBrand": "464"
   },
-
   "search": {
     "Business": {
       "name" : "shadowchef"
@@ -30,6 +29,16 @@
     "Brand" : {
       "business": "Shikder dev ltd",
       "brandname" : "meat theory"
+    }
+  },
+  "User": {
+    "Cloud": {
+      "FirstName" : "Automation user",
+      "Picture": "cypress/fixtures/Admin_images/brand_banner.png",
+      "selectBusiness": "504",
+      "selectCountry": "Philippines",
+      "selectBrand": "Automated brand caterva",
+      "selectBranch": "Automated location cribro"
     }
   }
 }
