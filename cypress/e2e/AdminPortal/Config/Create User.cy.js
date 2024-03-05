@@ -30,7 +30,7 @@ describe('create User',function(){
         cy.AddRoleBizOwner()
         user.clickedOnSave()
     })
-    it.skip('should create cloud brand manager from admin', function(){
+    it('should create cloud brand manager from admin', function(){
         cy.SelectUser()
         user.clickOnNew()
         cy.AddFirstName()
@@ -49,7 +49,7 @@ describe('create User',function(){
         cy.AddEmail()
         cy.AddPhone()
         cy.AddPicture()
-        //cy.AddBranchManagerrole()
-        // user.clickedOnSave()
+        cy.AddBranchManagerrole()
+        user.clickedOnSave()
     })
 })

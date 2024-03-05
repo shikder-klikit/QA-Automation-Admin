@@ -46,16 +46,21 @@ Cypress.Commands.add('SelectcountryForUser', () =>{
     cy.get('.width > :nth-child(2)').click()
 })
 Cypress.Commands.add('SelectbrandForUser', () =>{
-    cy.get('.sc-select-placeholder.text-grey-darker').click()
+    cy.get('.sc-select-placeholder.text-grey-darker').click().wait(2000)
     cy.get('input[placeholder=\'Select Brand\']').type(testData.data.User.Cloud.selectBrand).wait(2000)
     cy.contains(testData.data.User.Cloud.selectBrand).click()
     cy.get('.width > :nth-child(2)').click()
 })
 Cypress.Commands.add('SelectbranchForUser', () =>{
-    cy.get('.sc-select-placeholder.text-grey-darker').click()
+    cy.get('.sc-select-placeholder.text-grey-darker').click().wait(2000)
     cy.get('input[placeholder=\'Select Branches\']').type(testData.data.User.Cloud.selectBranch).wait(2000)
     cy.contains(testData.data.User.Cloud.selectBranch).click()
     cy.get('.width > :nth-child(2)').click()
+})
+Cypress.Commands.add('SelectbranchForbranch', () =>{
+    cy.xpath('//*[@id="app"]/div[1]/div/div[3]/div[2]/div[1]/div[2]/form/div[1]/div[6]/div/div/div[2]').click().wait(2000)
+    cy.get('input[placeholder=\'Select Branch\']').type(testData.data.User.Cloud.selectBranch).wait(2000)
+    cy.contains(testData.data.User.Cloud.selectBranch).click()
 })
 Cypress.Commands.add('AddRoleBizOwner',() =>{
     cy.AddRoleBusinessOwner()
@@ -71,6 +76,5 @@ Cypress.Commands.add('AddBrandManagerrole',() =>{
 Cypress.Commands.add('AddBranchManagerrole',() =>{
     cy.AddRoleBranchmanager()
     cy.SelectBusinessForUser()
-    //cy.SelectbrandForUser()
-    cy.SelectbranchForUser()
+    cy.SelectbranchForbranch()
 })
