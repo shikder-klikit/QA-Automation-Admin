@@ -1,9 +1,14 @@
 import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
-
+const campaign = new UtilityMethods();
+const login = () => {
+    cy.LoginAsAutomationAdminWithsession()
+}
 describe('Campaign_create_order_level_percentage_delivery_fee_discount',function(){
+    beforeEach(() => {
+        login('user')
+        cy.VisitHomePage()
+    })
     it('should create new campaign with delivery fee discount', function() {
-        cy.VisitSite();
-        cy.LoginAsAutomationAdmin();
         cy.SelectCampaign();
         cy.CreateCampaign();
         cy.EnterCampaignName();
@@ -11,7 +16,6 @@ describe('Campaign_create_order_level_percentage_delivery_fee_discount',function
         cy.enterBrand();
         cy.enterBranchData();
         cy.clickCloseButton();
-        const campaign = new UtilityMethods();
         campaign.clickOnNext();
         campaign.clickOnNext();
         cy.clickOnDeliveryFeeDiscount();
