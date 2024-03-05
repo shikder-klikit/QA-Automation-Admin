@@ -1,10 +1,15 @@
 /// <reference types="cypress" />
 import UtilityMethods, {Aggregator, UserType} from "../../../support/Common_methods/utilityMethods";
-
+const campaign = new UtilityMethods();
+const login = () => {
+    cy.LoginAsAutomationAdminWithsession()
+}
 describe('Campaign_create_order_level_percentage',function(){
+    beforeEach(() => {
+        login('user')
+        cy.VisitHomePage()
+    })
     it('should create new campaign', function() {
-        cy.VisitSite();
-        cy.LoginAsAutomationAdmin();
         cy.SelectCampaign();
         cy.CreateCampaign();
         cy.EnterCampaignName();
@@ -12,7 +17,6 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.enterBrand();
         cy.enterBranchData();
         cy.clickCloseButton();
-        const campaign = new UtilityMethods();
         campaign.clickOnNext()
         campaign.clickOnNext()
         cy.enterValue();

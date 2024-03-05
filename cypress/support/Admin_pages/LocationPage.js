@@ -8,7 +8,7 @@ import {faker} from "@faker-js/faker";
 Cypress.Commands.add('AddLocationName',( min, max ) =>{
     cy.get('.p-5 > :nth-child(2) > .sc-input-container > .border').type(testData.data.Location.Name+' '+faker.lorem.word())
 })
-Cypress.Commands.add('AddPhone', () =>{
+Cypress.Commands.add('AddLocationPhone', () =>{
     cy.get('.phone-input-field').type(testData.data.Location.phone)
 })
 Cypress.Commands.add('AddAddress', () =>{

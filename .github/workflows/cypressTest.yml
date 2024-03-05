@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - master
+      - Develop
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -15,6 +16,7 @@ jobs:
         containers: [1] # Uses 2 parallel instances
     steps:
       - name: Checkout
+        # Uses the official GitHub Checkout  https://github.com/marketplace/actions/checkout
         uses: actions/checkout@v4.1.1
       - name: cy_run_recorded
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
@@ -30,12 +32,13 @@ jobs:
           #record: false
           # auto-cancel-after-failures: 1
           parallel: false # Runs test in parallel using settings above
-      - uses: actions/upload-artifact@v4.3.0
+          # Uses the official Upload a Build Artifact https://github.com/marketplace/actions/upload-a-build-artifact
+      - uses: actions/upload-artifact@v4.3.1
         if: failure()
         with:
          name: cypress-screenshots
          path: ./cypress/screenshots
-      - uses: actions/upload-artifact@v4.3.0
+      - uses: actions/upload-artifact@v4.3.1
         if: always()
         with:
          name: cypress-videos
