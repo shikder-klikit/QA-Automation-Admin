@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {Aggregator, UserType} from "../../../support/Common_methods/utilityMethods";
 
 describe('Campaign_create_order_level_percentage',function(){
     it('should create new campaign', function() {
@@ -51,7 +51,7 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregatorFromMultipleAggregator('grab');
+        campaign.clickAggregator(Aggregator.Grab);
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);
