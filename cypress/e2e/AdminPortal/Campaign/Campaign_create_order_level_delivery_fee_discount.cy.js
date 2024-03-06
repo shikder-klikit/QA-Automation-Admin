@@ -47,6 +47,7 @@ describe('Campaign_create_order_level_percentage_delivery_fee_discount',function
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
         cy.ClickOnEndTime();
         cy.selectTimeFromPicker(hours,minutes)
+        cy.clickOnAvailabilityDefaultDay;
         cy.clickOnAddTime();
         cy.clickOnAvailabilityDefaultDay();
         cy.availabilityStartTime();
