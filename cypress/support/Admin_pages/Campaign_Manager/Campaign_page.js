@@ -69,14 +69,18 @@ Cypress.Commands.add("clickOnEndDate", () => {
     cy.get(':nth-child(16) > .gap-y-2 > .sc-select-container > .react-datepicker-wrapper > .react-datepicker__input-container > div > .sc-selector').click()
 });
 Cypress.Commands.add("ClickOnEndTime", () => {
-    cy.get(':nth-child(16) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click()
+    cy.get(':nth-child(16) > :nth-child(2) > .flex-col > .sc-timepicker > .sc-timepicker-label').click();
+    cy.log("end time clicked")
 });
 
 
 Cypress.Commands.add("clickOnAddTime",()=>{
-    cy.get(':nth-child(20) > .flex-row').click();
+    cy.get("button[class='flex flex-row items-center justify-center gap-x-1 px-4 py-2 bg-grey-light rounded-lg']").click();
 });
 
+Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
+    cy.get("body div[id='app'] div[class='flex flex-col gap-y-4'] div div[class='grid grid-cols-8 w-full max-w-full overflow-x-auto scrollbar-none'] button:nth-child(1)").click();
+});
 Cypress.Commands.add("clickOnAggregatorFromMultipleAggregator",(nameOfAggregator)=>{
     if(nameOfAggregator==="klikit"){
         cy.xpath("//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]").click();
