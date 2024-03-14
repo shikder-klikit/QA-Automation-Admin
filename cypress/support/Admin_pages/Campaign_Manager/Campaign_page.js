@@ -1,6 +1,6 @@
 let testData= {}
 before(function(){
-    cy.fixture('AdminData/campaignData.json').as('Campaign_dataset').then(function(data){
+    cy.fixture('campaignData.json').as('Campaign_dataset').then(function(data){
         testData.data =data
     })
 })
