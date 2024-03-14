@@ -19,7 +19,8 @@
     "cy:run:firefox": "cypress run --browser firefox --headed",
     "cy:run:electron": "cypress run --browser electron",
     "cy:run:chrome:headless": "cypress run --browser chrome --headless",
-    "cy:run:edge:headed": "npx cypress run --spec 'cypress/e2e/AdminPortal/Config/*.js'  --browser edge --headed"
+    "cy:run:edge:config": "npx cypress run --spec 'cypress/e2e/AdminPortal/Config/*.js'  --browser edge --headless",
+    "cy:run:edge:campaign": "npx cypress run --spec 'cypress/e2e/AdminPortal/Campaign/*.js'  --browser edge --headless"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
