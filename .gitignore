@@ -21,3 +21,5 @@
 /cypress/support/component.js
 /cypress/support/component-index.html
 /webpack.config.js
+.DS_Store
+/cypress/screenshots/
