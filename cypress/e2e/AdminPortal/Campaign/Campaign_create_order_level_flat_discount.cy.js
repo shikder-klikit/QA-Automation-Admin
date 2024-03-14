@@ -1,4 +1,4 @@
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {Aggregator, UserType} from "../../../support/Common_methods/utilityMethods";
 const campaign = new UtilityMethods();
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
@@ -47,14 +47,14 @@ describe('Campaign_create_order_level_percentage_flat_discount',function(){
         cy.selectDateFromCalendar(year, month, dayOfMonth+1);
         cy.ClickOnEndTime();
         cy.selectTimeFromPicker(hours,minutes)
-        cy.clickOnAddTime();
         cy.clickOnAvailabilityDefaultDay();
+        cy.clickOnAddTime();
         cy.availabilityStartTime();
         cy.selectTimeFromPicker(0,0);
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregatorFromMultipleAggregator('grab');
+        campaign.clickAggregator(Aggregator.Grab);
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);

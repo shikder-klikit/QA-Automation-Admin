@@ -55,7 +55,7 @@ describe('Campaign_create_order_level_percentage_delivery_fee_discount',function
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        cy.clickOnAggregator('grab');
+        cy.clickOnAggregatorFromMultipleAggregator('grab');
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);

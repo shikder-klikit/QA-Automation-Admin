@@ -78,9 +78,9 @@ Cypress.Commands.add("clickOnAddTime",()=>{
     cy.get("button[class='flex flex-row items-center justify-center gap-x-1 px-4 py-2 bg-grey-light rounded-lg']").click();
 });
 
-Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
-    cy.get("body div[id='app'] div[class='flex flex-col gap-y-4'] div div[class='grid grid-cols-8 w-full max-w-full overflow-x-auto scrollbar-none'] button:nth-child(1)").click();
-});
+// Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
+//     cy.xpath("//div[contains(@class,'flex flex-col gap-y-4')]//div//div[contains(@class,'grid grid-cols-8 w-full max-w-full overflow-x-auto scrollbar-none')]//button[contains(@type,'button')][normalize-space()='Default']").click();
+// });
 Cypress.Commands.add("clickOnAggregatorFromMultipleAggregator",(nameOfAggregator)=>{
     if(nameOfAggregator==="klikit"){
         cy.xpath("//form[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]").click();
@@ -107,7 +107,7 @@ Cypress.Commands.add("clickOnCreateCampaign",() => {
 });
 
 Cypress.Commands.add("clickOnAvailabilityDefaultDay",()=>{
-    cy.get(':nth-child(1) > .grid-cols-8 > .border-primary').click();
+    cy.xpath("//div[contains(@class,'flex flex-col gap-y-4')]//div//div[contains(@class,'grid grid-cols-8 w-full max-w-full overflow-x-auto scrollbar-none')]//button[contains(@type,'button')][normalize-space()='Default']").click();
 })
 
 Cypress.Commands.add("availabilityStartTime",()=>{
