@@ -20,4 +20,8 @@ describe('create Business',function(){
         // business.clickoncheckbox()
         business.clickedOnSave()
     })
+    it('delete the business',function (){
+        cy.SelectBusiness()
+        cy.DeleteBusiness()
+    })
 })
