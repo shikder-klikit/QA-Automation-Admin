@@ -5,7 +5,7 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
-Cypress.Commands.add('AddLocationName',( min, max ) =>{
+Cypress.Commands.add('AddLocationName',() =>{
     cy.get('.p-5 > :nth-child(2) > .sc-input-container > .border').type(testData.data.Location.Name+' '+faker.lorem.word())
 })
 Cypress.Commands.add('AddLocationPhone', () =>{
@@ -21,7 +21,8 @@ Cypress.Commands.add('AddLongitude', () =>{
     cy.get(':nth-child(4) > :nth-child(2) > .border').type(testData.data.Location.Longitude)
 })
 Cypress.Commands.add('SelectCity', () =>{
-    cy.get('.flex-col > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.city+' ').wait(2000)
+    cy.get('.flex-col > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.city+' ')
+    cy.wait(2000)
     cy.get('.sc-select-dropdown > :nth-child(2) > span').as('btn').click({force:true})
 })
 Cypress.Commands.add('selectSalesPackage', () =>{
@@ -33,12 +34,15 @@ Cypress.Commands.add('SelectBrands', () =>{
     cy.get('.multiple-placeholder-select-all-button').click()
 })
 Cypress.Commands.add('SelectBusinessForLocation', () =>{
-    cy.get(':nth-child(12) > .mr-4 > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBusiness).wait(2000)
+    cy.get(':nth-child(12) > .mr-4 > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBusiness)
+    cy.wait(2000)
     cy.contains(testData.data.Location.selectBusiness).click()
 })
 Cypress.Commands.add('SelectBrandForLocation', () =>{
-    cy.get(':nth-child(12) > :nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBrand).wait(2000)
-    cy.contains(testData.data.Location.selectBrand).click().wait(2000)
+    cy.get(':nth-child(12) > :nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBrand)
+    cy.wait(2000)
+    cy.contains(testData.data.Location.selectBrand).click()
+    cy.wait(2000)
 })
 Cypress.Commands.add('UseMenuV2', () =>{
     cy.get('.my-4').contains('Use MenuV2 for klikit orders').click()
@@ -56,6 +60,7 @@ Cypress.Commands.add('SearchBrandforLocation', () =>{
     cy.contains(testData.data.search.Location.brand).click()
 })
 Cypress.Commands.add('SearchLocation', () =>{
-    cy.get('.border').type(testData.data.search.Location.locationname).wait(2000)
+    cy.get('.border').type(testData.data.search.Location.locationname)
+    cy.wait(2000)
     cy.contains(testData.data.search.Location.locationname).click()
 })
