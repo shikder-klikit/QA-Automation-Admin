@@ -29,6 +29,11 @@
     "Brand" : {
       "business": "Shikder dev ltd",
       "brandname" : "meat theory"
+    },
+    "Location": {
+      "business": "Shikder dev ltd",
+      "brand": "meat theory",
+      "locationname": "Philippines"
     }
   },
   "User": {

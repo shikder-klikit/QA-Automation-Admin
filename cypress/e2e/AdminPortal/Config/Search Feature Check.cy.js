@@ -19,4 +19,14 @@ describe('Search function check', () => {
         cy.selectBrand()
         cy.SearchBrand()
     })
+    it('search the location with business', () => {
+        cy.SelectLocation()
+        cy.SearchBusinessforLocation()
+        cy.SearchBrandforLocation()
+        cy.SearchLocation()
+    })
+    it('search the location without business', () => {
+        cy.SelectLocation()
+        cy.SearchLocation()
+    })
 })

@@ -47,3 +47,15 @@ Cypress.Commands.add('UseMenuV2', () =>{
 Cypress.Commands.add('markChurned', () =>{
     cy.get('.p-5 > .sc-checkbox-container.mb-4').contains('This is a churned location').click()
 })
+Cypress.Commands.add('SearchBusinessforLocation', () =>{
+    cy.xpath('//div[@class=\'w-full lg:w-1/2 lg:mr-4 sm:mb-4 lg:mb-0\']//div[contains(@class,\'sc-select-placeholder\')]').type(testData.data.search.Location.business).wait(2000).type(' ').wait(2000).type('{backspace}')
+    cy.contains(testData.data.search.Location.business).click()
+})
+Cypress.Commands.add('SearchBrandforLocation', () =>{
+    cy.xpath('//div[@class=\'w-full lg:w-1/2\']//div[contains(@class,\'sc-select-placeholder\')]').type(testData.data.search.Location.brand).wait(2000).type(' ').wait(2000).type('{backspace}')
+    cy.contains(testData.data.search.Location.brand).click()
+})
+Cypress.Commands.add('SearchLocation', () =>{
+    cy.get('.border').type(testData.data.search.Location.locationname).wait(2000)
+    cy.contains(testData.data.search.Location.locationname).click()
+})
