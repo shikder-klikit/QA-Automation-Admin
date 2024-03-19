@@ -21,8 +21,8 @@ describe('Search function check', () => {
     })
     it('search the location with business', () => {
         cy.SelectLocation()
-        cy.SearchBusinessforLocation()
-        cy.SearchBrandforLocation()
+        cy.SearchBusinessForLocation()
+        cy.SearchBrandForLocation()
         cy.SearchLocation()
     })
     it('search the location without business', () => {
