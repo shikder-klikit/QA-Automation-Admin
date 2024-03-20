@@ -21,16 +21,19 @@ Cypress.Commands.add('PickBusiness',()=>{
 
 Cypress.Commands.add('enterBusinessName',()=> {
     cy.get(':nth-child(1) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.business);
+    cy.wait(2000)
     cy.get('.sc-select-dropdown-item').click()
 })
 
 Cypress.Commands.add('enterBrand',()=> {
     cy.get(':nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.brand);
+    cy.wait(2000);
     cy.get('.sc-select-dropdown-item').click()
 })
 
 Cypress.Commands.add('enterBranchData',()=> {
     cy.get('.flex.w-full > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.location);
+    cy.wait(2000);
     cy.get('.sc-select-dropdown-item').click()
 })
 
