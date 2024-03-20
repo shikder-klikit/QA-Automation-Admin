@@ -8,7 +8,7 @@ describe('create User',function(){
         login('user')
         cy.VisitHomePage()
     })
-    it.skip('should create admin user from admin', function(){
+    it('should create admin user from admin', function(){
         cy.SelectUser()
         user.clickOnNew()
         cy.AddFirstName()
@@ -19,7 +19,7 @@ describe('create User',function(){
         cy.AddRoleAdmin()
         user.clickedOnSave()
     })
-    it.skip('should create cloud biz owner from admin', function(){
+    it('should create cloud biz owner from admin', function(){
         cy.SelectUser()
         user.clickOnNew()
         cy.AddFirstName()
