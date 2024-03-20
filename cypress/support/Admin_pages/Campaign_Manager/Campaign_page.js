@@ -21,17 +21,20 @@ Cypress.Commands.add('PickBusiness',()=>{
 
 Cypress.Commands.add('enterBusinessName',()=> {
     cy.get(':nth-child(1) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.business);
-    cy.get('.sc-select-dropdown-item').click()
+    cy.wait(2000)
+    cy.get('.sc-select-dropdown-item').contains(testData.data.General.business).click()
 })
 
 Cypress.Commands.add('enterBrand',()=> {
     cy.get(':nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.brand);
-    cy.get('.sc-select-dropdown-item').click()
+    cy.wait(2000);
+    cy.get('.sc-select-dropdown-item').contains(testData.data.General.brand).click()
 })
 
 Cypress.Commands.add('enterBranchData',()=> {
     cy.get('.flex.w-full > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.General.location);
-    cy.get('.sc-select-dropdown-item').click()
+    cy.wait(2000);
+    cy.get('.sc-select-dropdown-item').contains(testData.data.General.location).click()
 })
 
 Cypress.Commands.add('clickCloseButton',()=>{

@@ -3,7 +3,7 @@ const business = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
 }
-describe('create Business',function(){
+describe('create Business then deletes the business',function(){
     beforeEach(() => {
         login('user')
         cy.VisitHomePage()
@@ -19,6 +19,9 @@ describe('create Business',function(){
         // cy.AddBusinessSelectPricingGroups()
         // business.clickoncheckbox()
         business.clickedOnSave()
-        cy.ShowBusiness()
+    })
+    it('delete the business',function (){
+        cy.SelectBusiness()
+        cy.DeleteBusiness()
     })
 })
