@@ -1,4 +1,4 @@
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {UserType} from "../../../../support/Common_methods/utilityMethods";
 const location = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
@@ -11,7 +11,7 @@ describe('Create Location',function(){
     it('should create location from admin', function(){
         cy.SelectLocation()
         location.clickOnNew()
-        cy.AddLocationName(6,12)
+        cy.AddLocationName()
         cy.AddLocationPhone()
         cy.AddAddress()
         cy.AddLatitude()
@@ -30,6 +30,10 @@ describe('Create Location',function(){
         cy.UseMenuV2()
         cy.get(':nth-child(18) > .text-sm').click()
         //location.clickedOnSave()
-        cy.ShowLocation()
+        //cy.ShowLocation()
+    })
+    it('should delete Location from admin', function(){
+        cy.SelectLocation()
+        cy.DeleteLocation()
     })
 })
