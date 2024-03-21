@@ -5,8 +5,9 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
+const fakeLocationName= faker.company.buzzNoun();
 Cypress.Commands.add('AddLocationName',() =>{
-    cy.get('.p-5 > :nth-child(2) > .sc-input-container > .border').type(testData.data.Location.Name+' '+faker.lorem.word())
+    cy.get('.p-5 > :nth-child(2) > .sc-input-container > .border').type(testData.data.Location.Name+' '+fakeLocationName)
 })
 Cypress.Commands.add('AddLocationPhone', () =>{
     cy.get('.phone-input-field').type(testData.data.Location.phone)
@@ -63,4 +64,16 @@ Cypress.Commands.add('SearchLocation', () =>{
     cy.get('.border').type(testData.data.search.Location.locationname)
     cy.wait(2000)
     cy.contains(testData.data.search.Location.locationname).click()
+})
+Cypress.Commands.add('ShowLocation', () =>{
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(testData.data.Location.Name).wait(2000)
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type('{ }'+fakeLocationName).wait(2000)
+    cy.contains(testData.data.Location.Name+' '+fakeLocationName).click()
+})
+Cypress.Commands.add('DeleteLocation',() =>{
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(testData.data.Location.Name).wait(2000)
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type('{ }'+fakeLocationName).wait(2000)
+    cy.contains(testData.data.Location.Name+' '+fakeLocationName).click()
+    cy.get('span > .sc-btn-secondary-outline').click()
+    cy.get('.sc-modal-visible > .sc-modal-content > .sc-modal-body > .justify-end > .text-sm').click()
 })

@@ -1,9 +1,9 @@
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {UserType} from "../../../../support/Common_methods/utilityMethods";
 const brand = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
 }
-describe('create Brand',function(){
+describe('create Brand then deletes the brand',function(){
     beforeEach(() => {
         login('user')
         cy.VisitHomePage()
@@ -11,7 +11,7 @@ describe('create Brand',function(){
     it('should create brand from admin', function(){
         cy.selectBrand()
         brand.clickOnNew()
-        cy.AddBrandName(6,12)
+        cy.AddBrandName()
         cy.AddBrandBanner()
         cy.AddBrandLogo()
         cy.AddQRCodeLabel()
@@ -20,5 +20,9 @@ describe('create Brand',function(){
         cy.SelectBranchforBrand()
         brand.clickedOnSave()
         cy.ShowBrand()
+    })
+    it('should delete brand from admin', function(){
+        cy.selectBrand()
+        cy.DeleteBrand()
     })
 })

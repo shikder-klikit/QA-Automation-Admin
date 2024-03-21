@@ -1,11 +1,11 @@
 {
   "Business":{
-    "Name": "Automated business",
+    "Name": "Automated Business",
     "business_klikitfee": "5"
   },
 
   "Brand": {
-      "Name": "Automated brand",
+      "Name": "Automated Brand",
       "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
       "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
       "selectBusiness": "504",
@@ -38,7 +38,7 @@
   },
   "User": {
     "Cloud": {
-      "FirstName" : "Automation user",
+      "FirstName" : "Automation User",
       "Picture": "cypress/fixtures/Admin_images/brand_banner.png",
       "selectBusiness": "504",
       "selectCountry": "Philippines",
