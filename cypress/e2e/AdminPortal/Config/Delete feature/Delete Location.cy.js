@@ -30,7 +30,7 @@ describe('Create Location',function(){
         cy.UseMenuV2()
         cy.get(':nth-child(18) > .text-sm').click()
         //location.clickedOnSave()
-        cy.ShowLocation()
+        //cy.ShowLocation()
     })
     it('should delete Location from admin', function(){
         cy.SelectLocation()

@@ -30,5 +30,6 @@ describe('Create Location',function(){
         cy.UseMenuV2()
         cy.get(':nth-child(18) > .text-sm').click()
         //location.clickedOnSave()
+        cy.ShowLocation()
     })
 })

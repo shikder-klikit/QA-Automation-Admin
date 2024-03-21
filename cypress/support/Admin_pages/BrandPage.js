@@ -5,7 +5,7 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
-const fakeBrandName = faker.word.noun(10,20);
+const fakeBrandName = faker.company.buzzNoun();
 Cypress.Commands.add('AddBrandName',() =>{
     cy.get(':nth-child(3) > .border').type(testData.data.Brand.Name+' '+fakeBrandName)
 })

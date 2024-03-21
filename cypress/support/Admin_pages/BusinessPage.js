@@ -5,7 +5,7 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
-const fakeBusinessName = faker.company.name();
+const fakeBusinessName = faker.company.buzzNoun();
 const fakeBusinessAddress= faker.lorem.words();
 const fakeEmail= faker.internet.email({firstName: 'automated',provider: 'yopmail.com' });
 const fakePhone= faker.phone.number('0167#######');

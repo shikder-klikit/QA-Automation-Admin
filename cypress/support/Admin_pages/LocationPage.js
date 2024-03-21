@@ -5,7 +5,7 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
-const fakeLocationName= faker.word.noun(10,20);
+const fakeLocationName= faker.company.buzzNoun();
 Cypress.Commands.add('AddLocationName',() =>{
     cy.get('.p-5 > :nth-child(2) > .sc-input-container > .border').type(testData.data.Location.Name+' '+fakeLocationName)
 })

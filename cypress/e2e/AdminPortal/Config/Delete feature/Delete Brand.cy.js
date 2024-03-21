@@ -11,7 +11,7 @@ describe('create Brand then deletes the brand',function(){
     it('should create brand from admin', function(){
         cy.selectBrand()
         brand.clickOnNew()
-        cy.AddBrandName(6,12)
+        cy.AddBrandName()
         cy.AddBrandBanner()
         cy.AddBrandLogo()
         cy.AddQRCodeLabel()

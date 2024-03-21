@@ -19,7 +19,7 @@ describe('create Business then deletes the business',function(){
         // cy.AddBusinessSelectPricingGroups()
         // business.clickoncheckbox()
         business.clickedOnSave()
-        cy.ShowBusiness()
+        //cy.ShowBusiness()
     })
     it('delete the business',function (){
         cy.SelectBusiness()
