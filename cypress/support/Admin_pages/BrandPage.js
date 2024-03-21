@@ -7,7 +7,7 @@ before(function(){
 import {faker} from "@faker-js/faker";
 const fakeBrandName = faker.word.noun(10,20);
 Cypress.Commands.add('AddBrandName',() =>{
-    cy.get(':nth-child(3) > .border').type(fakeBrandName)
+    cy.get(':nth-child(3) > .border').type(testData.data.Brand.Name+' '+fakeBrandName)
 })
 Cypress.Commands.add('AddBrandBanner', () =>{
     cy.get('.w-full.flex > .mt-3 > .h-8').selectFile(testData.data.Brand.upload_banner)
@@ -39,12 +39,12 @@ Cypress.Commands.add('SearchBrand', () =>{
     cy.contains(testData.data.search.Brand.brandname).click()
 })
 Cypress.Commands.add('ShowBrand', () =>{
-    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(fakeBrandName).wait(2000)
-    cy.contains(fakeBrandName).click()
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(testData.data.Brand.Name+' '+fakeBrandName).wait(2000)
+    cy.contains(testData.data.Brand.Name+' '+fakeBrandName).click()
 })
 Cypress.Commands.add('DeleteBrand',() =>{
-    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(fakeBrandName).wait(2000)
-    cy.contains(fakeBrandName).click()
+    cy.xpath('//input[@placeholder=\'Enter name to search\']').type(testData.data.Brand.Name+' '+fakeBrandName).wait(2000)
+    cy.contains(testData.data.Brand.Name+' '+fakeBrandName).click()
     cy.get('.justify-between > .sc-btn-danger-outline').click()
     cy.get('.sc-btn-danger').click()
 })

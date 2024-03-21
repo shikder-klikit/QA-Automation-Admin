@@ -1,4 +1,4 @@
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {UserType} from "../../../../support/Common_methods/utilityMethods";
 const business = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
@@ -19,6 +19,7 @@ describe('create Business then deletes the business',function(){
         // cy.AddBusinessSelectPricingGroups()
         // business.clickoncheckbox()
         business.clickedOnSave()
+        cy.ShowBusiness()
     })
     it('delete the business',function (){
         cy.SelectBusiness()

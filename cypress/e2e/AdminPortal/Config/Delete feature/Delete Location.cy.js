@@ -1,4 +1,4 @@
-import UtilityMethods, {UserType} from "../../../support/Common_methods/utilityMethods";
+import UtilityMethods, {UserType} from "../../../../support/Common_methods/utilityMethods";
 const location = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()

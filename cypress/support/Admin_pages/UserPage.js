@@ -5,17 +5,20 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
+const fakeUserLastName = faker.lorem.word({min:10,max:15});
+const fakeEmail= faker.internet.email({firstName: 'automated',provider: 'yopmail.com' });
+const fakePhone= faker.phone.number('0167#######');
 Cypress.Commands.add('AddFirstName',() =>{
     cy.get('input[name=\'first_name\']').type(testData.data.User.Cloud.FirstName)
 })
 Cypress.Commands.add('AddLastName',() =>{
-    cy.get('input[name=\'last_name\']').type(faker.lorem.word({min:10,max:15}))
+    cy.get('input[name=\'last_name\']').type(fakeUserLastName)
 })
 Cypress.Commands.add('AddEmail',() =>{
-    cy.get(':nth-child(3) > .mr-4 > .border').type(faker.internet.email({firstName: 'automated',provider: 'yopmail.com' }))
+    cy.get(':nth-child(3) > .mr-4 > .border').type(fakeEmail)
 })
 Cypress.Commands.add('AddPhone',() =>{
-    cy.get(':nth-child(3) > :nth-child(2) > .border').type(faker.phone.number('0167#######'))
+    cy.get(':nth-child(3) > :nth-child(2) > .border').type(fakePhone)
 })
 Cypress.Commands.add('AddPicture',() =>{
     cy.get('.mt-3 > .h-8').selectFile(testData.data.User.Cloud.Picture)
@@ -77,4 +80,16 @@ Cypress.Commands.add('AddBranchManagerrole',() =>{
     cy.AddRoleBranchmanager()
     cy.SelectBusinessForUser()
     cy.SelectbranchForbranch()
+})
+Cypress.Commands.add('ShowUser',() =>{
+    cy.wait(2000)
+    cy.get('.bg-white > .sc-input-container > .border').type(testData.data.User.Cloud.FirstName+' '+fakeUserLastName)
+    cy.contains(testData.data.User.Cloud.FirstName+' '+fakeUserLastName).click()
+})
+Cypress.Commands.add('DeleteUser',() =>{
+    cy.wait(2000)
+    cy.get('.bg-white > .sc-input-container > .border').type(testData.data.User.Cloud.FirstName+' '+fakeUserLastName)
+    cy.contains(testData.data.User.Cloud.FirstName+' '+fakeUserLastName).click()
+    cy.get('.justify-between > .sc-btn-secondary-outline').click()
+    cy.get('.sc-modal-body > .flex > .text-sm').click()
 })

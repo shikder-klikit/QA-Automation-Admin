@@ -10,7 +10,7 @@ const fakeBusinessAddress= faker.lorem.words();
 const fakeEmail= faker.internet.email({firstName: 'automated',provider: 'yopmail.com' });
 const fakePhone= faker.phone.number('0167#######');
 Cypress.Commands.add('AddBusinessName',() =>{
-    cy.get(':nth-child(1) > .sc-input-container > .border').type(fakeBusinessName)
+    cy.get(':nth-child(1) > .sc-input-container > .border').type(testData.data.Business.Name+' '+fakeBusinessName)
 })
 Cypress.Commands.add('AddBusinessAddress',(min,max) =>{
     cy.get('.sc-textarea').type(fakeBusinessAddress)
@@ -34,12 +34,12 @@ Cypress.Commands.add('BusinessSearch',() =>{
     cy.contains(testData.data.search.Business.name).click()
 })
 Cypress.Commands.add('ShowBusiness',() =>{
-    cy.get(':nth-child(2) > .sc-input-container > .border').type(fakeBusinessName)
-    cy.contains(fakeBusinessName).click()
+    cy.get(':nth-child(2) > .sc-input-container > .border').type(testData.data.Business.Name+' '+fakeBusinessName)
+    cy.contains(testData.data.Business.Name+' '+fakeBusinessName).click()
 })
 Cypress.Commands.add('DeleteBusiness',() =>{
-    cy.get(':nth-child(2) > .sc-input-container > .border').type(fakeBusinessName)
-    cy.contains(fakeBusinessName).click()
+    cy.get(':nth-child(2) > .sc-input-container > .border').type(testData.data.Business.Name+' '+fakeBusinessName)
+    cy.contains(testData.data.Business.Name+' '+fakeBusinessName).click()
     cy.xpath('//button[@class=\'sc-btn-secondary-outline sc-btn sc-btn-primary-outline sc-btn-secondary-outline sc-btn-lg\']').click()
     cy.get('.sc-modal-body > .flex > .text-sm').click()
 })
