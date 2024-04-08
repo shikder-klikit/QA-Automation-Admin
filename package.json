@@ -3,9 +3,13 @@
     "cy_run": "cypress run",
     "cy_run_recorded": "cypress run --record",
     "clean:reports": "rm -rf cypress/reports || true",
+    "clean:reports:windows": "rd /s /q \"cypress\\reports\"\n",
     "clean:screenshots": "rm -rf cypress/screenshots || true",
+    "clean:screenshots:windows": "rd /s /q \"cypress\\screenshots\"\n",
     "clean:videos": "rm -rf cypress/videos || true",
+    "clean:videos:windows": "rd /s /q \"cypress\\videos\"\n",
     "clean:downloads": "rm -rf cypress/downloads || true",
+    "clean:downloads:windows": "rd /s /q \"cypress\\downloads\"\n",
     "pretest": "npm run clean:reports && npm run clean:screenshots && npm run clean:videos && npm run clean:downloads",
     "cy_run_key": "npx cypress run --record --key 3cc3ba98-fbc7-4c33-9ad1-90ebde8e1afd",
     "combine-reports": "npx mochawesome-merge \"cypress/reports/html/.jsons/*.json\" > mochawesome.json",
@@ -20,11 +24,11 @@
     "cy:run:electron": "cypress run --browser electron",
     "cy:run:chrome:headless": "cypress run --browser chrome --headless",
     "cy:run:edge:config": "npx cypress run --spec 'cypress/e2e/AdminPortal/Config/*.js'  --browser edge --headless",
-    "cy:run:edge:campaign": "npx cypress run --spec 'cypress/e2e/AdminPortal/Campaign/*.js'  --browser edge --headless"
+    "cy:run:edge:login": "npx cypress run --spec 'cypress/e2e/AdminPortal/Login/*.js'  --browser edge --headless"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
-    "cypress": "^13.7.0"
+    "cypress": "^13.7.1"
   },
   "dependencies": {
     "@cypress/github-action": "^6.6.0",
