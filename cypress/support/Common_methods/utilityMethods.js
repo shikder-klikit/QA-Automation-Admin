@@ -5,6 +5,7 @@ const campaignUser =".radio-container"
 const newUser=":nth-child(1) > .sc-radio-text"
 const everyone =":nth-child(2) > .sc-radio-text";
 const save = ".justify-between > .text-sm";
+const addnew = ".justify-end > .flex.sc-btn-primary";
 const closingHour = "";
 const openingHour = "";
 const selectHour = "";
@@ -63,6 +64,9 @@ class UtilityMethods
     }
     clickOnNew() {
         cy.get(clicknewbutton).click()
+    }
+    AddNewButton() {
+        cy.get(addnew).click()
     }
     clickoncheckbox() {
         cy.get(clickoncheckbox).click()
