@@ -12,5 +12,6 @@ describe('Business level menu', () => {
         cy.SelectMenuBeta()
         cy.SelectBusinessForMenu()
         menu.AddNewButton()
+        cy.AddMenuName()
     })
 })

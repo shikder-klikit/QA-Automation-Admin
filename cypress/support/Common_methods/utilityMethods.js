@@ -114,7 +114,7 @@ class UtilityMethods
         }
     }
 
-    setStartDate() {
+    setCurrentDate() {
         // Get current date and time
         const currentDate = new Date();
         const currentDateTimeString = currentDate.toISOString(); // You can format it as needed
@@ -129,7 +129,6 @@ class UtilityMethods
     }
 
 }
-
 
 Cypress.Commands.add("selectDateFromCalendar", (yearCount, targetMonth, targetDate) => {
 
