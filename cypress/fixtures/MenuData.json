@@ -1,6 +1,7 @@
 {
   "Menu": {
     "BusinessName": "Klikit Automation restaurant",
-    "MenuName": "Automation menu"
+    "MenuName": "Automation menu",
+    "upload_logo": "cypress/fixtures/Admin_images/brand_logo.png"
   }
 }
