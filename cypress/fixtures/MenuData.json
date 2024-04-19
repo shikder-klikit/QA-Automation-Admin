@@ -3,5 +3,8 @@
     "BusinessName": "Klikit Automation restaurant",
     "MenuName": "Automation menu",
     "upload_logo": "cypress/fixtures/Admin_images/brand_logo.png"
+  },
+  "Modifier": {
+    "ModifierName": "Automation modifier"
   }
 }
