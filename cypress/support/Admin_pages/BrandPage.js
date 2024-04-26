@@ -5,15 +5,17 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
+import 'cypress-file-upload';
 const fakeBrandName = faker.company.buzzNoun();
 Cypress.Commands.add('AddBrandName',() =>{
     cy.get(':nth-child(3) > .border').type(testData.data.Brand.Name+' '+fakeBrandName)
 })
 Cypress.Commands.add('AddBrandBanner', () =>{
-    cy.get('.w-full.flex > .mt-3 > .h-8').selectFile(testData.data.Brand.upload_banner)
+    cy.get('#banner').selectFile(testData.data.Brand.upload_banner)
+    cy.wait(5000)
 })
 Cypress.Commands.add('AddBrandLogo', () =>{
-    cy.get('.w-24 > .mt-3 > .h-8').selectFile(testData.data.Brand.upload_logo)
+    cy.get('#logo').selectFile(testData.data.Brand.upload_logo)
 })
 Cypress.Commands.add('AddQRCodeLabel', () =>{
     cy.get(':nth-child(4) > .border').type(faker.location.streetAddress({useFullAddress: true }))

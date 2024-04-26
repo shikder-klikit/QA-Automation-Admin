@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
-    "cypress": "^13.7.0"
+    "cypress": "^13.8.1",
+    "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
     "@cypress/github-action": "^6.6.0",
@@ -33,7 +34,6 @@
     "@testing-library/cypress": "^10.0.1",
     "cy-verify-downloads": "^0.2.2",
     "cypress-fail-fast": "^7.0.3",
-    "cypress-file-upload": "^5.0.8",
     "cypress-gmail-tester": "^1.0.0",
     "cypress-if": "^1.10.5",
     "cypress-iframe": "^1.0.1",
