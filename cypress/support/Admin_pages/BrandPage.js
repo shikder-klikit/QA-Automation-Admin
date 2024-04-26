@@ -11,11 +11,11 @@ Cypress.Commands.add('AddBrandName',() =>{
     cy.get(':nth-child(3) > .border').type(testData.data.Brand.Name+' '+fakeBrandName)
 })
 Cypress.Commands.add('AddBrandBanner', () =>{
-    cy.get('#banner').selectFile(testData.data.Brand.upload_banner)
+    cy.get('#banner').selectFile(testData.data.Brand.upload_banner, { force: true })
     cy.wait(5000)
 })
 Cypress.Commands.add('AddBrandLogo', () =>{
-    cy.get('#logo').selectFile(testData.data.Brand.upload_logo)
+    cy.get('#logo').selectFile(testData.data.Brand.upload_logo, { force: true })
 })
 Cypress.Commands.add('AddQRCodeLabel', () =>{
     cy.get(':nth-child(4) > .border').type(faker.location.streetAddress({useFullAddress: true }))
