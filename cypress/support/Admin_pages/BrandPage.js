@@ -24,7 +24,7 @@ Cypress.Commands.add('AddQRCodeLabelUrl', () =>{
     cy.get('.sc-textarea').type(faker.lorem.words({min:8,max:20}))
 })
 Cypress.Commands.add('SelectBusinessforBrand', () =>{
-    cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)').type(testData.data.Brand.selectBusiness).wait(2000)
+    cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(12) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)').type(testData.data.Brand.selectBusiness).wait(2000)
     cy.contains(testData.data.Brand.selectBusiness).click()
 })
 Cypress.Commands.add('SelectBranchforBrand', () =>{
