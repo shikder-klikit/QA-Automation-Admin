@@ -6,8 +6,8 @@
 
   "Brand": {
       "Name": "Automated Brand",
-      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
-      "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
+      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.jpg",
+      "upload_logo": "cypress/fixtures/Admin_images/brand_logo.png",
       "selectBusiness": "504",
       "selectBranch": "820"
   },
