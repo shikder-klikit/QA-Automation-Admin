@@ -18,7 +18,7 @@ describe('create Brand then deletes the brand',function(){
         cy.AddQRCodeLabelUrl()
         cy.SelectBusinessforBrand()
         cy.SelectBranchforBrand()
-        brand.clickedOnSave()
+        cy.get('.save-btn').click()
         cy.ShowBrand()
     })
     it('should delete brand from admin', function(){

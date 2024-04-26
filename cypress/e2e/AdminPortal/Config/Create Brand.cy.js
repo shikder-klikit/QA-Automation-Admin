@@ -18,7 +18,7 @@ describe('create Brand',function(){
         cy.AddQRCodeLabelUrl()
         cy.SelectBusinessforBrand()
         cy.SelectBranchforBrand()
-        brand.clickedOnSave()
+        cy.get('.save-btn').click()
         cy.ShowBrand()
     })
 })
