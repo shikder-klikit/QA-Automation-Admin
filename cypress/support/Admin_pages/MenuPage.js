@@ -76,3 +76,7 @@ Cypress.Commands.add('ModifierDelete', () =>{
     cy.get('.flex-row.justify-end > .relative > .action-dropdown > :nth-child(1) > :nth-child(2)').click()
     cy.get('.sc-modal-visible > .sc-modal-content > .sc-modal-body > .flex-col > .flex > .sc-btn-primary').click()
 })
+// Item section
+Cypress.Commands.add('SelectItem', () =>{
+    cy.get('.h-12 > :nth-child(1) > :nth-child(3)').click()
+})

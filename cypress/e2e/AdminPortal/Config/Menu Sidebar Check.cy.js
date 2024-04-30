@@ -11,7 +11,6 @@ describe('Pro menu check', () => {
     })
     it('search the menu', () => {
         cy.SelectMenu()
-        cy.SelectMenuBeta()
     })
     it('search the Marketing', () => {
         cy.SelectWebshop()

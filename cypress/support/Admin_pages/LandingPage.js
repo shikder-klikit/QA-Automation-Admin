@@ -4,11 +4,7 @@ Cypress.Commands.add('SelectOrderDashboard', () =>{
 })
 Cypress.Commands.add('SelectMenu', () =>{
     cy.wait(1000)
-    cy.contains('Menu').click()
-})
-Cypress.Commands.add('SelectMenuBeta', () =>{
-    cy.wait(1000)
-    cy.get('ul > :nth-child(5) > .pro-inner-item > .pro-item-content > a').click()
+    cy.get('ul > :nth-child(4) > .pro-inner-item > .pro-item-content > a').click()
 })
 Cypress.Commands.add('SelectWebshop', () =>{
     cy.wait(1000)
@@ -40,7 +36,7 @@ Cypress.Commands.add('SelectWhitelabel', () =>{
 })
 Cypress.Commands.add('SelectAnalytics', () =>{
     cy.wait(1000)
-    cy.get(':nth-child(14) > :nth-child(2) > .pro-inner-item > .pro-item-content > a').click()
+    cy.get(':nth-child(13) > :nth-child(2) > .pro-inner-item > .pro-item-content > a').click()
 })
 Cypress.Commands.add('SelectActivities', () =>{
     cy.wait(1000)

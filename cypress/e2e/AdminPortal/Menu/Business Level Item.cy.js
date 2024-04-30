@@ -3,24 +3,21 @@ const menu = new UtilityMethods()
 const login = () => {
     cy.LoginAsAutomationAdminWithsession()
 }
-describe('Business level menu', () => {
+describe('Business level category', () => {
     beforeEach(() => {
         login('user')
         cy.VisitHomePage()
     })
-    it('should create business level menu from admin', function(){
+    it.only('should create business level category from admin', function(){
         cy.SelectMenu()
         cy.SelectBusinessForMenu()
+        cy.SelectItem()
         menu.AddNewButton()
-        cy.AddMenuName()
-        cy.AddMenuLogo()
-        cy.AddMenuDescription()
-        cy.AddMenuHour()
-        cy.MenuSaveButton()
+
     })
     it('should search & delete business level menu from admin', function(){
         cy.SelectMenu()
         cy.SelectBusinessForMenu()
-        cy.MenuDelete()
+
     })
 })

@@ -9,7 +9,7 @@ describe('Business level category', () => {
     cy.VisitHomePage()
   })
   it('should create business level category from admin', function(){
-    cy.SelectMenuBeta()
+    cy.SelectMenu()
     cy.SelectBusinessForMenu()
     cy.SelectModifier()
     menu.AddNewButton()
@@ -18,7 +18,7 @@ describe('Business level category', () => {
     cy.ModifierSaveButton()
   })
   it('should search & delete business level menu from admin', function(){
-    cy.SelectMenuBeta()
+    cy.SelectMenu()
     cy.SelectBusinessForMenu()
     cy.SelectModifier()
     cy.ModifierDelete()

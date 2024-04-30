@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
-    "cypress": "^13.7.3"
+    "cypress": "^13.8.1"
   },
   "dependencies": {
     "@cypress/github-action": "^6.6.0",
