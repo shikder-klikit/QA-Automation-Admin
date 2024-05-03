@@ -126,8 +126,6 @@ Cypress.Commands.add("clickOnDeliveryFeeDiscount",()=>{
     cy.get(':nth-child(3) > :nth-child(1) > .grid-cols-3 > :nth-child(3)').click();
 })
 
-
-
 Cypress.Commands.add("filterCampaignByBusinessName", () => {
     cy.get(':nth-child(1) > :nth-child(1) > .sc-selector > .sc-select-placeholder').click();
     const businessName = testData.data.General.business;
@@ -162,7 +160,6 @@ function sendStringInChunks(string, chunkSize, waitBetweenChunks) {
         }
     });
 }
-
 
 Cypress.Commands.add("filterCampaignByStatus", (status) => {
     if (status === 'active') {

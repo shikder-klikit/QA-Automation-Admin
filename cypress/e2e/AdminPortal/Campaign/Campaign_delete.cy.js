@@ -24,8 +24,3 @@ describe('Campaign_delete',function() {
         })
 
 })
-
-
-
-
-
