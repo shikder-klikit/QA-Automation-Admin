@@ -128,3 +128,75 @@ Cypress.Commands.add("clickOnFlatDiscount",()=>{
 Cypress.Commands.add("clickOnDeliveryFeeDiscount",()=>{
     cy.get(':nth-child(3) > :nth-child(1) > .grid-cols-3 > :nth-child(3)').click();
 })
+
+Cypress.Commands.add("filterCampaignByBusinessName", () => {
+    cy.get(':nth-child(1) > :nth-child(1) > .sc-selector > .sc-select-placeholder').click();
+    const businessName = testData.data.General.business;
+    cy.log(businessName);
+    //const arr = sendStringInChunks(businessName, 2, 1000)
+
+    sendStringInChunks(businessName, 6, 1000);
+    //cy.get('.sc-select-search').type("shad").wait(2000).type("owchef").wait(2000);
+    cy.get('.sc-select-dropdown-item > span').as('btn').click({force: true});
+
+})
+
+
+function sendStringInChunks(string, chunkSize, waitBetweenChunks) {
+    // Split the string into chunks
+
+    function chunkSubstr(str, size) {
+        return Array.from({length: Math.ceil(str.length / size)}, (_, i) =>
+            str.slice(i * size, i * size + size)
+        );
+    }
+
+    const chunks = chunkSubstr(string, chunkSize)
+
+
+    // Send each chunk with a delay
+    chunks.forEach((chunk, index) => {
+        //cy.visit('/'); // Replace with your target URL
+        cy.xpath("//input[@placeholder='Select business']").type(chunk); // Replace with your input selector
+        if (index < chunks.length - 1) {
+            cy.wait(waitBetweenChunks); // Add delay between chunks
+        }
+    });
+}
+
+Cypress.Commands.add("filterCampaignByStatus", (status) => {
+    if (status === 'active') {
+        cy.get(':nth-child(2) > :nth-child(2) > .sc-selector > .sc-select-placeholder').click();
+        cy.get('.sc-select-search')
+        cy.get('.sc-select-search').type(status).wait(2000);
+        cy.get('.sc-select-dropdown-item').click();
+        cy.get('.width > :nth-child(2)').click();
+    } else if (status === 'upcoming') {
+        cy.get(':nth-child(2) > :nth-child(2) > .sc-selector > .sc-select-placeholder').click();
+        cy.get('.sc-select-search')
+        cy.get('.sc-select-search').type(status).wait(2000);
+        cy.get('.sc-select-dropdown-item').click();
+        cy.get('.width > :nth-child(2)').click();
+    } else if (status === 'expired') {
+        cy.get(':nth-child(2) > :nth-child(2) > .sc-selector > .sc-select-placeholder').click();
+        cy.get('.sc-select-search')
+        cy.get('.sc-select-search').type(status).wait(2000);
+        cy.get('.sc-select-dropdown-item').click();
+        cy.get('.width > :nth-child(2)').click();
+    }
+})
+
+Cypress.Commands.add("deleteCampaign",()=>{
+    cy.xpath("//tbody/tr[1]/td[9]/button[1]/i[1]").click();
+    cy.xpath("//div[contains(@class,'sc-modal sc-modal-visible sc-modal-white')]//button[contains(@class,'sc-btn-md')][normalize-space()='Delete']").click();
+
+})
+
+// Cypress.Commands.add("getNumberOfCampaignToDelete",()=> {
+//     return cy.get('span:nth-child(4)').invoke('text')
+//         .then(itemToDeleteText => {
+//             cy.log('item no', itemToDeleteText);
+//
+//             return itemToDeleteText;
+//         })
+//     })
