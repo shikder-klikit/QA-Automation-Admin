@@ -39,7 +39,7 @@
   "User": {
     "Cloud": {
       "FirstName" : "Automation User",
-      "Picture": "cypress/fixtures/Admin_images/brand_banner.png",
+      "Picture": "cypress/fixtures/Admin_images/brand_banner.jpg",
       "selectBusiness": "504",
       "selectCountry": "Philippines",
       "selectBrand": "Automated brand caterva",
