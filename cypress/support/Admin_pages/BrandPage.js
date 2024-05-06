@@ -5,14 +5,12 @@ before(function(){
     })
 })
 import {faker} from "@faker-js/faker";
-import 'cypress-file-upload';
 const fakeBrandName = faker.company.buzzNoun();
 Cypress.Commands.add('AddBrandName',() =>{
     cy.get(':nth-child(3) > .border').type(testData.data.Brand.Name+' '+fakeBrandName)
 })
 Cypress.Commands.add('AddBrandBanner', () =>{
-    cy.get('#banner').selectFile(testData.data.Brand.upload_banner, { force: true })
-    cy.wait(5000)
+    cy.get('#banner').selectFile(testData.data.Brand.upload_banner, { force: true }).wait(5000)
 })
 Cypress.Commands.add('AddBrandLogo', () =>{
     cy.get('#logo').selectFile(testData.data.Brand.upload_logo, { force: true })

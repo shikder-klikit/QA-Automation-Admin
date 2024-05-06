@@ -4,6 +4,7 @@ import './Admin_pages/BusinessPage'
 import './Admin_pages/BrandPage'
 import './Admin_pages/LocationPage'
 import './Admin_pages/UserPage'
+import './Admin_pages/MenuPage'
 import 'cypress-file-upload';
 import '@faker-js/faker'
 import 'cypress-wait-until';
