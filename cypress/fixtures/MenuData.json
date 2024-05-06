@@ -6,5 +6,8 @@
   },
   "Modifier": {
     "ModifierName": "Automation modifier"
+  },
+  "Item": {
+    "ItemName": "Automation Item"
   }
 }
