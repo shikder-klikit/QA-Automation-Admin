@@ -45,10 +45,6 @@ Cypress.Commands.add('SelectBrandForLocation', () =>{
     cy.contains(testData.data.Location.selectBrand).click()
     cy.wait(2000)
 })
-Cypress.Commands.add('UseMenuV2', () =>{
-    cy.get('.my-4').contains('Use MenuV2 for klikit orders').click()
-    cy.get('.my-4').contains('Has MenuV2 module').click()
-})
 Cypress.Commands.add('markChurned', () =>{
     cy.get('.p-5 > .sc-checkbox-container.mb-4').contains('This is a churned location').click()
 })
