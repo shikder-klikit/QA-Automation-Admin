@@ -17,7 +17,7 @@ describe('Business level category', () => {
     cy.AddModifierDescription()
     cy.ModifierSaveButton()
   })
-  it('should search & delete business level menu from admin', function(){
+  it('should search & delete business level category from admin', function(){
     cy.SelectMenu()
     cy.SelectBusinessForMenu()
     cy.SelectModifier()

@@ -1,4 +1,3 @@
-// Import comma.js using ES2015 syntax:
 import './commands'
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from

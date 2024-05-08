@@ -10,3 +10,4 @@ import '@faker-js/faker'
 import 'cypress-wait-until';
 import './Admin_pages/Campaign_Manager/Campaign_page'
 import 'xpath_cypress';
+import "allure-cypress/commands";
