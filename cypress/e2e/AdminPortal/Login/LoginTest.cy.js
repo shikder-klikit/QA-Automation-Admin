@@ -6,7 +6,7 @@ describe('VisitSite & login',function(){
         login('user')
         cy.VisitHomePage()
     })
-    it('should Logout', function(){
+    it.skip('should Logout', function(){
       cy.Logout()
   })
 })

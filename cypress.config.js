@@ -1,4 +1,6 @@
 const { defineConfig } = require("cypress");
+const { allureCypress } = require("allure-cypress/reporter");
+
 
 module.exports = defineConfig({
   projectId: 'z6sayv',
@@ -17,6 +19,7 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false,
     overwrite: false,
+    html: true,
   },
   defaultCommandTimeout: 10000,
   pageLoadTimeout: 50000,
@@ -30,8 +33,11 @@ module.exports = defineConfig({
     experimentalOriginDependencies: true,
     experimentalRunAllSpecs: true,
     video:true,
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    setupNodeEvents: (on, config) => {
+            allureCypress(on, {
+                  resultsDir: "./allure-results",
+               });
+               return config;
+          },
   },
 });
