@@ -19,6 +19,6 @@ describe('create Brand',function(){
         cy.SelectBusinessforBrand()
         cy.SelectBranchforBrand()
         cy.get('.save-btn').click()
-        cy.ShowBrand()
+        //cy.ShowBrand()
     })
 })

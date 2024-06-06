@@ -30,13 +30,13 @@ Cypress.Commands.add('AddMenuDescription', () =>{
 Cypress.Commands.add('AddMenuHour', () =>{
     cy.get('.bg-grey-lighter > .flex').click()
     cy.get('.mt-4 > .items-center > .text-xs').click()
-    //start time
-    cy.xpath('//div[@class=\'flex flex-col w-full items-start mr-2\']//div[@class=\'sc-timepicker-label border border-red-light\'][normalize-space()=\'00:00\']').click()
-    cy.selectTimeFromPicker('01',0)
-    cy.get('.p-2 > .mt-1').click()
     //end time
-    cy.xpath('//div[@class=\'flex w-full\']//div[@class=\'flex flex-col w-full items-start\']//div[@class=\'sc-timepicker-label border border-red-light\'][normalize-space()=\'00:00\']').click()
+    cy.xpath('//div[@class=\'sc-timepicker-label border-none\'][normalize-space()=\'00:05\']').click()
     cy.selectTimeFromPicker('23',0)
+    cy.get('.p-2 > .mt-1').click()
+    //start time
+    cy.xpath('//div[@class=\'sc-timepicker-label border-none\'][normalize-space()=\'00:00\']').click()
+    cy.selectTimeFromPicker('01',0)
     cy.get('.p-2 > .mt-1').click()
 })
 Cypress.Commands.add('MenuSaveButton', () =>{
@@ -96,7 +96,7 @@ Cypress.Commands.add('AddItemPrice', () =>{
     cy.get('#currency').type(faker.random.numeric(5))
 })
 Cypress.Commands.add('ItemSaveButton', () =>{
-    cy.get('.cursor-pointer > .w-full > .sc-btn').click()
+    cy.get('.menu-tab-content-header-right > .ml-4').click()
 })
 Cypress.Commands.add('ItemSearch', () =>{
     cy.get('.sc-input-container > .h-8').type(testData.data.Item.ItemName+' '+fakeMenuName+' '+formattedDate)
