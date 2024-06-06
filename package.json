@@ -12,7 +12,7 @@
     "clean:videos:windows": "rd /s /q \"cypress\\videos\"\n",
     "clean:downloads": "rm -rf cypress/downloads || true",
     "clean:downloads:windows": "rd /s /q \"cypress\\downloads\"\n",
-    "pretest": "npm run clean:reports && npm run clean:screenshots && npm run clean:videos && npm run clean:downloads",
+    "pretest": "npm run clean:reports && npm run clean:screenshots && npm run clean:videos && npm run clean:downloads && npm run clean:Allure:reports",
     "cy_run_key": "npx cypress run --record --key 3cc3ba98-fbc7-4c33-9ad1-90ebde8e1afd",
     "combine-reports": "npx mochawesome-merge \"cypress/reports/html/.jsons/*.json\" > mochawesome.json",
     "generate-report": "npx marge mochawesome.json -f report -o cypress/reports/html/.jsons/",
