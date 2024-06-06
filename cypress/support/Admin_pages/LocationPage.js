@@ -21,6 +21,9 @@ Cypress.Commands.add('AddLatitude', () =>{
 Cypress.Commands.add('AddLongitude', () =>{
     cy.get(':nth-child(4) > :nth-child(2) > .border').type(testData.data.Location.Longitude)
 })
+Cypress.Commands.add('MoveOrderstoDelivered', () =>{
+    cy.get('.items-start > .flex-col > .flex-row').type(testData.data.Location.MoveOrderstoDelivered)
+})
 Cypress.Commands.add('SelectCity', () =>{
     cy.get('.flex-col > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.city+' ')
     cy.wait(2000)
@@ -35,12 +38,12 @@ Cypress.Commands.add('SelectBrands', () =>{
     cy.get('.multiple-placeholder-select-all-button').click()
 })
 Cypress.Commands.add('SelectBusinessForLocation', () =>{
-    cy.get(':nth-child(12) > .mr-4 > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBusiness)
+    cy.xpath('//div[@class=\'w-1/2 mr-4\']//div[contains(@class,\'sc-select-placeholder\')]').type(testData.data.Location.selectBusiness)
     cy.wait(2000)
     cy.contains(testData.data.Location.selectBusiness).click()
 })
 Cypress.Commands.add('SelectBrandForLocation', () =>{
-    cy.get(':nth-child(12) > :nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBrand)
+    cy.get(':nth-child(14) > :nth-child(2) > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.Location.selectBrand)
     cy.wait(2000)
     cy.contains(testData.data.Location.selectBrand).click()
     cy.wait(2000)

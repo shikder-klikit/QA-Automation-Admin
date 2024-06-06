@@ -19,7 +19,6 @@ describe('create Brand then deletes the brand',function(){
         cy.SelectBusinessforBrand()
         cy.SelectBranchforBrand()
         cy.get('.save-btn').click()
-        cy.ShowBrand()
     })
     it('should delete brand from admin', function(){
         cy.selectBrand()

@@ -16,8 +16,6 @@ describe('create Business',function(){
         cy.AddBusinessEmail()
         cy.AddBusinessPhone()
         cy.AddBusinessKlikitFee()
-        // cy.AddBusinessSelectPricingGroups()
-        // business.clickoncheckbox()
         business.clickedOnSave()
         cy.ShowBusiness()
     })
