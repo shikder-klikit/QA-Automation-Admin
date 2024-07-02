@@ -23,7 +23,6 @@ describe('Create Location',function(){
         location.selectThursday()
         location.selectFriday()
         location.selectSaturday()
-        cy.MoveOrderstoDelivered()
         cy.SelectCity()
         cy.selectSalesPackage()
         cy.SelectBusinessForLocation()

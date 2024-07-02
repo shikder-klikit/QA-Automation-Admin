@@ -33,14 +33,13 @@ Cypress.Commands.add('AddMenuHour', () =>{
     //end time
     cy.xpath('//div[@class=\'sc-timepicker-label border-none\'][normalize-space()=\'00:05\']').click()
     cy.selectTimeFromPicker('23',0)
-    cy.get('.p-2 > .mt-1').click()
     //start time
     cy.xpath('//div[@class=\'sc-timepicker-label border-none\'][normalize-space()=\'00:00\']').click()
     cy.selectTimeFromPicker('01',0)
     cy.get('.p-2 > .mt-1').click()
 })
 Cypress.Commands.add('MenuSaveButton', () =>{
-    cy.get('.menu-tab-content-header-right > .justify-end > .ml-4').click()
+    cy.get('.visible > .ml-4').click()
 })
 //menu search & delete
 Cypress.Commands.add('MenuSearch', () =>{

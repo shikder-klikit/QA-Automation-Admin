@@ -8,7 +8,7 @@ describe('create User then deletes the user',function(){
         login('user')
         cy.VisitHomePage()
     })
-    it.only('should create cloud branch manager from admin', function(){
+    it('should create cloud branch manager from admin', function(){
         cy.SelectUser()
         user.clickOnNew()
         cy.AddFirstName()
