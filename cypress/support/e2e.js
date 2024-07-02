@@ -4,6 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
 })
+Cypress.on('uncaught:exception', () => { return false })
 
 const origLog1 = Cypress.log
 Cypress.log = function (opts, ...other) {

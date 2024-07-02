@@ -31,11 +31,11 @@ Cypress.Commands.add('SelectBranchforBrand', () =>{
     cy.get('.width > :nth-child(2)').click()
 })
 Cypress.Commands.add('SearchBusinessforBrand', () =>{
-    cy.get('.flex.mb-4 > .sc-select-container > .sc-selector > .sc-select-placeholder').type(testData.data.search.Brand.business).wait(2000).type(' ').wait(2000).type('{backspace}')
+    cy.get('.sc-select-placeholder').type(testData.data.search.Brand.business).wait(2000).type(' ').wait(2000).type('{backspace}')
     cy.contains(testData.data.search.Brand.business).click()
 })
 Cypress.Commands.add('SearchBrand', () =>{
-    cy.get('.border').type(testData.data.search.Brand.brandname).wait(2000)
+    cy.get('.sc-input-container > .border').type(testData.data.search.Brand.brandname).wait(2000)
     cy.contains(testData.data.search.Brand.brandname).click()
 })
 Cypress.Commands.add('ShowBrand', () =>{
