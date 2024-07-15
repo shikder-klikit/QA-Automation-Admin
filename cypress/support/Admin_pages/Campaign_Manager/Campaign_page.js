@@ -191,6 +191,9 @@ Cypress.Commands.add("deleteCampaign",()=>{
     cy.xpath("//div[contains(@class,'sc-modal sc-modal-visible sc-modal-white')]//button[contains(@class,'sc-btn-md')][normalize-space()='Delete']").click();
 
 })
+//i[@class='kt-bin text-xl cursor-pointer text-red-dark']
+//tbody/tr[1]/td[9]
+//tbody/tr[1]/td[9]/button[1]/i[1]
 
 // Cypress.Commands.add("getNumberOfCampaignToDelete",()=> {
 //     return cy.get('span:nth-child(4)').invoke('text')
