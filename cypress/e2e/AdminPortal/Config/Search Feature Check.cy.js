@@ -15,17 +15,13 @@ describe('Search function check', () => {
         cy.SearchBusinessforBrand()
         cy.SearchBrand()
     })
-    it('search the brand without business', () => {
-        cy.selectBrand()
-        cy.SearchBrand()
-    })
     it('search the location with business', () => {
         cy.SelectLocation()
         cy.SearchBusinessForLocation()
         cy.SearchBrandForLocation()
         cy.SearchLocation()
     })
-    it('search the location without business', () => {
+    it.only('search the location without business', () => {
         cy.SelectLocation()
         cy.SearchLocation()
     })

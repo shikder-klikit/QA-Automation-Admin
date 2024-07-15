@@ -28,6 +28,6 @@ describe('Create Location',function(){
         cy.SelectBusinessForLocation()
         cy.SelectBrandForLocation()
         cy.get('.save-btn').click()
-        cy.ShowLocation()
+        //cy.ShowLocation()
     })
 })

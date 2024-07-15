@@ -28,6 +28,9 @@ Cypress.Commands.add('AddBusinessSelectPricingGroups',() =>{
     cy.get(':nth-child(7) > .sc-select-container > .sc-selector').click()
     cy.get('.sc-select-dropdown > :nth-child(1) > span').as('btn').click({force:true})
 })
+Cypress.Commands.add('BusinessSaveButton',() =>{
+    cy.get('.scam-business-save-btn').click()
+})
 //search business
 Cypress.Commands.add('BusinessSearch',() =>{
     cy.get('.border').type(testData.data.search.Business.name).wait(2000)
@@ -40,6 +43,6 @@ Cypress.Commands.add('ShowBusiness',() =>{
 Cypress.Commands.add('DeleteBusiness',() =>{
     cy.get(':nth-child(2) > .sc-input-container > .border').type(testData.data.Business.Name+' '+fakeBusinessName)
     cy.contains(testData.data.Business.Name+' '+fakeBusinessName).click()
-    cy.xpath('//button[@class=\'sc-btn-secondary-outline sc-btn sc-btn-primary-outline sc-btn-secondary-outline sc-btn-lg\']').click()
+    cy.get('.scam-business-delete-btn').click()
     cy.get('.sc-modal-body > .flex > .text-sm').click()
 })
