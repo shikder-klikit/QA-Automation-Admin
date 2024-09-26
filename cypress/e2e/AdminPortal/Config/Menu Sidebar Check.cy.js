@@ -6,6 +6,9 @@ describe('Pro menu check', () => {
         login('user')
         cy.VisitHomePage()
     })
+    it.only('should loop', () => {
+       cy.sidebar_loop()
+    });
     it('search the orders', () => {
         cy.SelectOrderDashboard()
     })
