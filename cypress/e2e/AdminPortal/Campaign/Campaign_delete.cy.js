@@ -13,13 +13,6 @@ describe('Campaign_delete',function() {
         //cy.filterCampaignByStatus("expired");
         cy.filterCampaignByStatus("upcoming");
         cy.filterCampaignByStatus("active");
-
-
-        let totalItemToDelete = cy.get('span:nth-child(4)').invoke('text')
-            .then(itemToDeleteText => {
-                cy.log('item no', itemToDeleteText);
-            })
-
         cy.deleteCampaign();
         })
 
