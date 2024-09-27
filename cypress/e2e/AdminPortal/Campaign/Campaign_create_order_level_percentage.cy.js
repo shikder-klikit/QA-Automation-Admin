@@ -55,7 +55,7 @@ describe('Campaign_create_order_level_percentage',function(){
         cy.availabilityEndTime();
         cy.selectTimeFromPicker(23,59);
         cy.clickNextButton();
-        campaign.clickAggregator(Aggregator.Grab);
+        campaign.clickAggregator(Aggregator.KlikIt);
         cy.clickNextButton();
         cy.clickOnTermsAndConditions();
         cy.wait(2000);

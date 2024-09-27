@@ -6,8 +6,8 @@
 
   "Brand": {
       "Name": "Automated Brand",
-      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.png",
-      "upload_logo": "cypress/fixtures/Admin_images/brand_banner.png",
+      "upload_banner": "cypress/fixtures/Admin_images/brand_banner.jpg",
+      "upload_logo": "cypress/fixtures/Admin_images/brand_logo.png",
       "selectBusiness": "504",
       "selectBranch": "820"
   },
@@ -20,7 +20,8 @@
       "SalesPackage":"Plus",
       "RestaurantServiceFee": "5",
       "selectBusiness": "504",
-      "selectBrand": "464"
+      "selectBrand": "464",
+    "MoveOrderstoDelivered": "180"
   },
   "search": {
     "Business": {
@@ -39,7 +40,7 @@
   "User": {
     "Cloud": {
       "FirstName" : "Automation User",
-      "Picture": "cypress/fixtures/Admin_images/brand_banner.png",
+      "Picture": "cypress/fixtures/Admin_images/brand_banner.jpg",
       "selectBusiness": "504",
       "selectCountry": "Philippines",
       "selectBrand": "Automated brand caterva",

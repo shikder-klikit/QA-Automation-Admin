@@ -27,10 +27,7 @@ describe('Create Location',function(){
         cy.selectSalesPackage()
         cy.SelectBusinessForLocation()
         cy.SelectBrandForLocation()
-        cy.UseMenuV2()
-        cy.get(':nth-child(18) > .text-sm').click()
-        //location.clickedOnSave()
-        //cy.ShowLocation()
+        cy.get('.save-btn').click()
     })
     it('should delete Location from admin', function(){
         cy.SelectLocation()

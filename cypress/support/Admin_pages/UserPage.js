@@ -50,7 +50,7 @@ Cypress.Commands.add('SelectcountryForUser', () =>{
 })
 Cypress.Commands.add('SelectbrandForUser', () =>{
     cy.get('.sc-select-placeholder.text-grey-darker').click().wait(2000)
-    cy.get('input[placeholder=\'Select Brand\']').type(testData.data.User.Cloud.selectBrand).wait(2000)
+    cy.get('.sc-select-search').type(testData.data.User.Cloud.selectBrand).wait(2000)
     cy.contains(testData.data.User.Cloud.selectBrand).click()
     cy.get('.width > :nth-child(2)').click()
 })
@@ -80,6 +80,7 @@ Cypress.Commands.add('AddBranchManagerrole',() =>{
     cy.AddRoleBranchmanager()
     cy.SelectBusinessForUser()
     cy.SelectbranchForbranch()
+    cy.SelectbrandForUser()
 })
 Cypress.Commands.add('ShowUser',() =>{
     cy.wait(2000)

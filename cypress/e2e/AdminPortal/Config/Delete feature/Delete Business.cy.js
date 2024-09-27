@@ -16,10 +16,7 @@ describe('create Business then deletes the business',function(){
         cy.AddBusinessEmail()
         cy.AddBusinessPhone()
         cy.AddBusinessKlikitFee()
-        // cy.AddBusinessSelectPricingGroups()
-        // business.clickoncheckbox()
-        business.clickedOnSave()
-        //cy.ShowBusiness()
+        cy.BusinessSaveButton()
     })
     it('delete the business',function (){
         cy.SelectBusiness()
