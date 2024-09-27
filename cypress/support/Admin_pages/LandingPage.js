@@ -106,3 +106,42 @@ Cypress.Commands.add('SelectFeatureAccess', () =>{
     cy.wait(1000)
     cy.contains('Feature Access').click()
 })
+Cypress.Commands.add('sidebar_loop', () =>{
+    // Function to recursively click nested children
+    function clickNestedChild(parentSelector) {
+        cy.get(parentSelector).then($el => {
+            // Click the parent element
+            cy.wrap($el).click({force:true});
+
+            // Optionally, add assertions or other commands after the click
+            // e.g., cy.url().should('include', `/expected-path-${index}`);
+
+            // Find all child elements
+            const children = $el.children();
+
+            // Loop through each child and click them if they exist
+            if (children.length > 0) {
+                children.each((index, child) => {
+                    const childSelector = `${parentSelector} > :nth-child(${index + 1})`;
+                    clickNestedChild(childSelector); // Recursively handle nested children
+                });
+            }
+        });
+
+        // Add a delay of 500ms (adjust as needed)
+        cy.wait(200);
+    }
+
+    // Get the total number of top-level children
+
+    cy.get('.pro-sidebar-content ul >').then($list => {
+        const itemCount = $list.length;
+
+
+        // Loop through each top-level nth-child based on the dynamic count
+        for (let i = 1; i <= itemCount; i++) {
+            const parentSelector = `ul > :nth-child(${i})`;
+            clickNestedChild(parentSelector);
+        }
+    });
+})
