@@ -111,7 +111,7 @@ Cypress.Commands.add('sidebar_loop', () =>{
     function clickNestedChild(parentSelector) {
         cy.get(parentSelector).then($el => {
             // Click the parent element
-            cy.wrap($el).click();
+            cy.wrap($el).click({force:true});
 
             // Optionally, add assertions or other commands after the click
             // e.g., cy.url().should('include', `/expected-path-${index}`);
@@ -129,12 +129,19 @@ Cypress.Commands.add('sidebar_loop', () =>{
         });
 
         // Add a delay of 500ms (adjust as needed)
-        cy.wait(500);
+        cy.wait(200);
     }
 
-    // Loop through each top-level nth-child
-    for (let i = 1; i <= 22; i++) {
-        const parentSelector = `ul > :nth-child(${i})`;
-        clickNestedChild(parentSelector);
-    }
+    // Get the total number of top-level children
+
+    cy.get('.pro-sidebar-content ul >').then($list => {
+        const itemCount = $list.length;
+
+
+        // Loop through each top-level nth-child based on the dynamic count
+        for (let i = 1; i <= itemCount; i++) {
+            const parentSelector = `ul > :nth-child(${i})`;
+            clickNestedChild(parentSelector);
+        }
+    });
 })
