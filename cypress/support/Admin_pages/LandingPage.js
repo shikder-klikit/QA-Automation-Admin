@@ -6,6 +6,10 @@ Cypress.Commands.add('SelectMenu', () =>{
     cy.wait(1000)
     cy.get('ul > :nth-child(4) > .pro-inner-item > .pro-item-content > a').click()
 })
+Cypress.Commands.add('SelectInventory', () =>{
+    cy.wait(1000)
+    cy.contains('Inventory').click()
+})
 Cypress.Commands.add('SelectWebshop', () =>{
     cy.wait(1000)
     cy.contains('Webshop').click()
