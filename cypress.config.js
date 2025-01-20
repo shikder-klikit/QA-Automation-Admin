@@ -5,10 +5,11 @@ const { allureCypress } = require("allure-cypress/reporter");
 module.exports = defineConfig({
   projectId: 'z6sayv',
   chromeWebSecurity: false,
+  experimentalStudio: true,
   watchForFileChanges: true,
   experimentalWebKitSupport: false,
   experimentalMemoryManagement: true,
-  video: true,
+  video: false,
   screenshotOnRunFailure: true,
   trashAssetsBeforeRuns: true,
   reporter: 'cypress-mochawesome-reporter',
